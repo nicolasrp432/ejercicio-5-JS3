@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Product Landing Page</title>
+    <meta charset="UTF-8">
+    <meta name="title" content="Product Landing Page">
+    <meta name="description" content="Product Landing Page">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Pedro/EJ-1-FrontWebLanding/style.css">
+    <link rel="stylesheet" href="./Pedro/EJ-1-FrontWebLanding/styleDinamicos.css">
+    <link rel="stylesheet" href="./Pedro/EJ-1-FrontWebLanding/stylesMenuHamburguesa.css">
+    
+</head>
+
+<body>
+    <div id="page-wrapper">
+        <header id="header">
+            <div class="logo">
+                <img id="header-img" src="./images/product-landing-page-logo.png" alt="original trombones logo" />
+            </div>
+
+            <!-- Menu original 
+            <nav id="nav-bar">
+                <ul>
+                    <li><a class="nav-link" href="#features">Features</a></li>
+                    <li><a class="nav-link" href="#how-it-works">How It Works</a></li>
+                    <li><a class="nav-link" href="#pricing">Pricing</a></li>
+                </ul>
+            </nav> -->
+            <!-- Menú hamburguesa -->
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger">☰</label>
+
+            <label for="menu-toggle" class="menu-background"></label>
+            <nav>
+                <ul class="menu">
+                    <li><label for="menu-toggle"><a href="#features" onclick="cerrarMenu()">Features</a></label></li>
+                    <li><label for="menu-toggle"><a href="#how-it-works" onclick="cerrarMenu()">How It Works</a></label></li>
+                    <li><label for="menu-toggle"><a href="#pricing" onclick="cerrarMenu()">Pricing</a></label></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div class="container"></div>
+    <section id="hero">
+        <h2>Handcrafted, home-made masterpieces</h2>
+        <form id="form" action="index.html">
+            <input name="email" id="email" type="email" placeholder="Enter your email address" required />
+            <input id="submit" type="submit" value="GET STARTED" class="btn" />
+        </form>
+    </section>
+
+    <div class="container">
+        <section id="features">
+            <div class="grid">
+                <div class="icon"><img src=icons/flame_icon.png> </div>
+                <div class="desc">
+                    <h2>Premiunm Materials</h2>
+                    <p>
+                        Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.
+                    </p>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="icon"><img src=icons/truck_icon.png> </div>
+                <div class="desc">
+                    <h2>Fast Shipping</h2>
+                    <p>
+                        We make sure you recieve your trombone as soon as we have finished making it. We also provide free returns if you are not satisfied.
+                    </p>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="icon"><img src=icons/batery_icon.png> </div>
+                <div class="desc">
+                    <h2>Quality Assurance</h2>
+                    <p>
+                        For every purchase you make, we will ensure there are no damages or faults and we will check and test the pitch of your instrument.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="pricing">
+            <div class="product" id="tenor">
+                <div class="level">TENOR TROMBONE</div>
+                <h2>$600</h2>
+                <ol>
+                    <li>Lorem ipsum.</li>
+                    <li>Lorem ipsum.</li>
+                    <li>Lorem ipsum dolor.</li>
+                    <li>Lorem ipsum.</li>
+                </ol>
+                <button class="btn">Select</button>
+            </div>
+            <div class="product" id="bass">
+                <div class="level">BASS TROMBONE</div>
+                <h2>$900</h2>
+                <ol>
+                    <li>Lorem ipsum.</li>
+                    <li>Lorem ipsum.</li>
+                    <li>Lorem ipsum dolor.</li>
+                    <li>Lorem ipsum.</li>
+                </ol>
+                <button class="btn">Select</button>
+            </div>
+            <div class="product" id="valve">
+                <div class="level">VALVE TROMBONE</div>
+                <h2>$1200</h2>
+                <ol>
+                    <li>Plays similar to Trumpet</li>
+                    <li>Great for Jazz Bands</li>
+                    <li>Lorem ipsum dolor.</li>
+                    <li>Lorem ipsum.</li>
+                </ol>
+                <button class="btn">Select</button>
+            </div>
+        </section>
+        <footer>
+            <ul>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <span>Copyright 2021 Original Trombones</span>
+        </footer>
+    </div>
+    </div>
+    <script>
+        // Selecciona todas las opciones del menú
+        const menuOptions = document.querySelectorAll('.menu-option'); // Asegúrate de que tus opciones tengan la clase 'menu-option'
+
+        // Selecciona el contenedor del menú hamburguesa
+        const menu = document.getElementById('menu'); // Cambia 'menu' por el ID de tu contenedor de menú
+
+        // Agrega un evento de clic a cada opción del menú
+        menuOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            // Cierra el menú (puedes ocultarlo o cambiar su clase)
+            menu.classList.remove('open'); // Cambia 'open' por la clase que usas para mostrar el menú
+        });
+        });
+
+    </script>
+</body>
+
+</html>
