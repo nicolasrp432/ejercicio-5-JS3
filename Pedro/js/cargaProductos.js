@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    alert.console("estoy en cargaProductos.js");
+    console.error("estoy en cargaProductos.js");
     fetch("/Pedro/json/productos.json")  // Cargar el archivo JSON
         .then(response => response.json())  // Convertir a objeto JS
         .then(productos => mostrarProductos(productos))  // Procesar datos
@@ -7,14 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function mostrarProductos(productos) {
-    const contenedor = document.getElementById("productos");
-    alert.console("estoy en mostrarProductos.js");
+    const contenedor = document.getElementById("productosJSON");
+    console.error("estoy en mostrarProductos.js");
     productos.forEach(producto => {
         // Crear el HTML de cada producto
         const productoHTML = `
             <article class="product-card">
                 <figure>
-                    <img src="${producto.imagen}" alt="${producto.nombre}">
+                    <img src="/Pedro/img/imgProductos/${producto.imagen}" alt="${producto.nombre}">
                 </figure>
                 <h2>${producto.nombre}</h2>
                 <p class="description">${producto.descripcion}</p>

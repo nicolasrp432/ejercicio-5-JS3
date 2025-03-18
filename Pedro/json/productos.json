@@ -1,15 +1,29 @@
 [
     {
-        "nombre": "Producto 1",
+        "nombre": "JSON 1",
         "descripcion": "Breve descripción del producto.",
-        "imagen": "producto1.jpg",
+        "imagen": "producto1.png",
         "precio": 19.99,
         "stock": "Disponible"
     },
     {
-        "nombre": "Producto 2",
+        "nombre": "JSON 2",
         "descripcion": "Descripción corta del producto.",
-        "imagen": "producto2.jpg",
+        "imagen": "producto2.png",
+        "precio": 24.99,
+        "stock": "Pocas unidades"
+    },
+    {
+        "nombre": "JSON 3",
+        "descripcion": "iphone super chulo.",
+        "imagen": "producto3.png",
+        "precio": 19.99,
+        "stock": "Disponible"
+    },
+    {
+        "nombre": "JSON 4",
+        "descripcion": "Descripción corta del producto.",
+        "imagen": "producto2.png",
         "precio": 24.99,
         "stock": "Pocas unidades"
     }
