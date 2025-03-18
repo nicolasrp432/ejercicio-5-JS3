@@ -1,0 +1,16 @@
+[
+    {
+        "nombre": "Producto 1",
+        "descripcion": "Breve descripción del producto.",
+        "imagen": "producto1.jpg",
+        "precio": 19.99,
+        "stock": "Disponible"
+    },
+    {
+        "nombre": "Producto 2",
+        "descripcion": "Descripción corta del producto.",
+        "imagen": "producto2.jpg",
+        "precio": 24.99,
+        "stock": "Pocas unidades"
+    }
+]
