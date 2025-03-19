@@ -1,3 +1,5 @@
+/*let products = []
+
 document.addEventListener("DOMContentLoaded", () => {
     console.error("estoy en cargaProductos.js");
     fetch("/Pedro/json/productos.json")  // Cargar el archivo JSON
@@ -5,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(productos => mostrarProductos(productos))  // Procesar datos
         .catch(error => console.error("Error al cargar productos:", error));
 });
-
-function mostrarProductos(productos) {
+*/
+export function mostrarProductos(productos) {
     const contenedor = document.getElementById("productosJSON");
     console.error("estoy en mostrarProductos.js");
     productos.forEach(producto => {
