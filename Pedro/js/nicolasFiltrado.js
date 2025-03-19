@@ -1,3 +1,4 @@
+/*
 // Esperar a que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
     // Mostrar todos los productos al cargar la página
@@ -181,8 +182,8 @@ function filterProducts() {
     
     displayProducts(filteredProducts);
 }
-
-function filterProducts(busqueda= "") {
+*/
+export function filterProducts(busqueda= "") {
     //const searchTerm = document.getElementById('search').value.toLowerCase();
     //const category = document.getElementById('category').value;
     //const priceMin = parseFloat(document.getElementById('price-min').value) || 0;
@@ -220,7 +221,7 @@ function filterProducts(busqueda= "") {
 }
 
 // Configurar los eventos de los enlaces del nav
-function setupNavLinks() {
+export function setupNavLinks() {
     const navLinks = document.querySelectorAll('nav a');
     
     navLinks.forEach(link => {
