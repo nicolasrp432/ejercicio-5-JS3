@@ -51,11 +51,8 @@ header h1 {
 /* Contenedor principal */
 .container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1200px;
     width: 100%;
-    padding: 20px;
+    max-width: 1400px;
 }
 
 /* Menú lateral */
@@ -119,17 +116,16 @@ nav ul li a:hover {
 
 /* Contenedor de productos */
 .productos-container {
-    display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    width: 100%;
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 250px; /* Espacio para el menú lateral */
 }
 
-/* Grid de productos */
+/* Grid de productos - 3 columnas */
 .productos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas grandes */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas grandes */
     gap: 20px; /* Espacio entre las tarjetas */
-    max-width: 800px; /* Ancho máximo del grid */
     width: 100%;
 }
 
@@ -143,13 +139,21 @@ nav ul li a:hover {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ajusta la distribución vertical */
+    height: 350px; /* Altura fija para todas las tarjetas */
 }
 
-/* Imagen de producto (mostrar imagen completa sin recortar) */
+/* Contenedor de imagen */
+.product-card figure {
+    margin: 0;
+    padding: 0;
+    height: 180px; /* Altura fija para todas las imágenes */
+    overflow: hidden;
+}
+
+/* Imagen de producto */
 .product-card img {
     width: 100%;
-    max-height: 200px; /* Limitar la altura */
+    height: 100%;
     object-fit: contain; /* Muestra la imagen completa sin recortarla */
     border-radius: 5px;
 }
@@ -160,24 +164,38 @@ nav ul li a:hover {
     margin: 10px 0;
 }
 
+/* Efecto de escala al pasar el ratón */
+.product-card img:hover {
+transform: scale(1.05); /* Aumenta un 5% el tamaño */
+}
+
 /* Descripción del producto */
 .product-card .description {
     flex-grow: 1; /* Hace que la descripción se expanda */
+    margin: 5px 0;
 }
 
 /* Precio del producto */
 .price {
     color: #27ae60; /* Color verde */
     font-weight: bold;
+    margin: 5px 0;
 }
 
 /* Stock del producto */
 .stock {
     font-size: 14px;
     color: #e74c3c; /* Color rojo */
+    margin: 5px 0;
 }
 
 /* Diseño adaptable para pantallas pequeñas */
+@media (max-width: 1024px) {
+    .productos {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+}
+
 @media (max-width: 768px) {
     /* Mostrar el botón de hamburguesa en pantallas pequeñas */
     .hamburger-menu {
@@ -187,11 +205,15 @@ nav ul li a:hover {
     /* Ocultar el menú lateral hasta que se active */
     nav {
         left: -250px; /* Oculto por defecto */
-        z-index: 100; /* Asegura que el menú esté por encima */
     }
 
     nav.active {
         left: 0; /* Muestra el menú */
+    }
+
+    /* Ajustar el contenedor de productos */
+    .productos-container {
+        margin-left: 0;
     }
 
     /* Grid de productos pasa a 1 columna */
@@ -199,6 +221,3 @@ nav ul li a:hover {
         grid-template-columns: 1fr;
     }
 }
-
-
-
