@@ -5,181 +5,224 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: #f4f4f4;
-    }
-    /* Header */
-    header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    /* Imagen de fondo estática */
+background: url('/IVAN/fondo.png') no-repeat center center fixed; 
+background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+}
+
+/* Header */
+header {
     background-color: #34495e;
     color: white;
     padding: 15px;
     text-align: center;
     position: relative;
-    }
-    header h1 {
+    width: 100%;
+    z-index: 1; /* Se baja la prioridad para que el menú quede por encima */
+}
+
+header h1 {
     margin: 0;
     font-size: 2rem;
     position: relative;
-    z-index: 1; /* Cambiado de 2 a 1 para que el menú se sobreponga */
-    }
-    /* Botón de menú hamburguesa */
-    .hamburger-menu {
-    display: none; /* Escondido en pantallas grandes */
+}
+
+/* Botón de menú hamburguesa */
+.hamburger-menu {
+    display: none; /* Oculto por defecto en pantallas grandes */
     background: transparent;
     border: none;
     cursor: pointer;
     position: absolute;
     right: 20px;
     top: 20px;
-    z-index: 3;
-    }
-    .hamburger-menu .bar {
+    z-index: 3; /* Asegura que el botón esté por encima del header */
+}
+
+.hamburger-menu .bar {
     display: block;
     width: 25px;
     height: 3px;
     margin: 5px 0;
     background-color: white;
     transition: all 0.3s ease;
-    }
-    /* Estructura de la página */
-    .container {
+}
+
+/* Contenedor principal */
+.container {
     display: flex;
-    min-height: 100vh;
-    flex-wrap: nowrap;
-    }
-    /* Menú lateral */
-    nav {
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* Menú lateral */
+nav {
     width: 250px;
     background-color: #34495e;
     padding: 20px;
     color: white;
     position: fixed;
     top: 0;
-    left: 0;
+    left: 0; /* Siempre visible en pantallas grandes */
     bottom: 0;
-    z-index: 1;
+    z-index: 100; /* Mayor prioridad para estar por encima del header */
     transition: left 0.3s ease;
-    }
-    /* El menú debe estar oculto en pantallas pequeñas */
-    nav.hidden {
-    display: none; /* El menú se oculta completamente en pantallas pequeñas */
-    }
-    /* Menú lateral activo cuando se hace clic en el menú hamburguesa */
-    nav.active {
-    left: 0; /* Mostrar el menú cuando se activa */
-    }
-    nav h2 {
+}
+
+nav.hidden {
+    display: none;
+}
+
+nav.active {
+    left: 0; /* Muestra el menú en pantallas pequeñas */
+}
+
+nav h2 {
     margin-top: 0;
     font-size: 1.5rem;
-    }
-    nav ul {
+}
+
+nav ul {
     list-style-type: none;
     padding: 0;
-    }
-    nav ul li {
+}
+
+nav ul li {
     margin: 15px 0;
-    }
-    nav ul li a {
+}
+
+nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 1.1rem;
     display: block;
     padding: 10px;
     border-radius: 5px;
-    }
-    nav ul li a:hover {
-    background-color: #34495e;
-    }
-    /* Subcategorías visibles */
-    .subcategoria {
+}
+
+nav ul li a:hover {
+    background-color: #2c3e50;
+}
+
+/* Subcategorías */
+.subcategoria {
     list-style-type: none;
     padding-left: 20px;
-    }
-    .subcategoria li {
+}
+
+.subcategoria li {
     margin: 5px 0;
-    }
-    /* Contenedor de productos */
-    .productos-container {
-    margin-left: 250px; /* Respetando el espacio del menú en pantallas grandes */
+}
+
+/* Contenedor de productos */
+.productos-container {
+    flex-grow: 1;
     padding: 20px;
-    width: calc(100% - 250px); /* Ajusta el contenido a la pantalla restante */
-    transition: margin-left 0.3s ease;
-    }
-    /* Productos */
-    .productos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    }
-    .producto {
-    width: 220px;
-    margin: 10px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    margin-left: 250px; /* Espacio para el menú lateral */
+}
+
+/* Grid de productos - 3 columnas */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas grandes */
+    gap: 20px; /* Espacio entre las tarjetas */
+    width: 100%;
+}
+
+/* Tarjeta de producto */
+.product-card {
+    background: #34495e; /* Color de las tarjetas */
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s ease;
-    }
-    .producto:hover {
-    transform: scale(1.05);
-    }
-    .producto-img {
-    width: 100%;
-    height: auto;
-    }
-    .producto-info {
-    padding: 10px;
-    }
-    .precio {
-    font-size: 1.2rem;
-    color: #27ae60;
-    margin: 10px 0;
-    }
-    .stock {
-    font-size: 1rem;
-    color: #e74c3c;
-    }
-
-
-
-
-
-
-    
-    /* Estilos para pantallas pequeñas */
-    @media (max-width: 768px) {
-    /* Mostrar el botón de menú hamburguesa */
-    .hamburger-menu {
-    display: block;
-     }
-    /* Ocultar completamente el menú lateral en pantallas pequeñas */
-    nav {
-    left: -250px; /* El menú está completamente fuera de la vista */
-    z-index: 10; /* Aumentado para que se sobreponga al header */
-     }
-    /* Cuando el menú está activo */
-    nav.active {
-    left: 0; /* Mostrar el menú cuando se activa */
-     }
-    /* Ajuste para el contenedor de productos en pantallas pequeñas */
-    .productos-container {
-    margin-left: 0;
-    width: 100%;
-     }
-    .productos {
+    display: flex;
     flex-direction: column;
-    align-items: center;
-     }
-    .producto {
-    width: 90%;
-     }
-    /* No mostrar el menú en absoluto cuando está oculto */
-    nav.hidden {
-    /* El menú no debe ocupar ningún espacio ni mostrarse en pantallas pequeñas */
-     }
+    height: 350px; /* Altura fija para todas las tarjetas */
+}
+
+/* Contenedor de imagen */
+.product-card figure {
+    margin: 0;
+    padding: 0;
+    height: 180px; /* Altura fija para todas las imágenes */
+    overflow: hidden;
+}
+
+/* Imagen de producto */
+.product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Muestra la imagen completa sin recortarla */
+    border-radius: 5px;
+}
+
+/* Título del producto */
+.product-card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Efecto de escala al pasar el ratón */
+.product-card img:hover {
+transform: scale(1.05); /* Aumenta un 5% el tamaño */
+}
+
+/* Descripción del producto */
+.product-card .description {
+    flex-grow: 1; /* Hace que la descripción se expanda */
+    margin: 5px 0;
+}
+
+/* Precio del producto */
+.price {
+    color: #27ae60; /* Color verde */
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* Stock del producto */
+.stock {
+    font-size: 14px;
+    color: #e74c3c; /* Color rojo */
+    margin: 5px 0;
+}
+
+/* Diseño adaptable para pantallas pequeñas */
+@media (max-width: 1024px) {
+    .productos {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mostrar el botón de hamburguesa en pantallas pequeñas */
+    .hamburger-menu {
+        display: block;
     }
 
+    /* Ocultar el menú lateral hasta que se active */
+    nav {
+        left: -250px; /* Oculto por defecto */
+    }
 
+    nav.active {
+        left: 0; /* Muestra el menú */
+    }
 
+    /* Ajustar el contenedor de productos */
+    .productos-container {
+        margin-left: 0;
+    }
 
-
-
+    /* Grid de productos pasa a 1 columna */
+    .productos {
+        grid-template-columns: 1fr;
+    }
+}
