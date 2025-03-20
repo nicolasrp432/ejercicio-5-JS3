@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
 */
 export function mostrarProductos(productos) {
     const contenedor = document.getElementById("productosJSON");
-    console.error("estoy en mostrarProductos.js");
     productos.forEach(producto => {
         // Crear el HTML de cada producto
         const productoHTML = `
