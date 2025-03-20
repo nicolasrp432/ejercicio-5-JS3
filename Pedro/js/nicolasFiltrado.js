@@ -192,40 +192,18 @@ export function filterProducts(busqueda= "") {
     //const priceMin = parseFloat(document.getElementById('price-min').value) || 0;
     //const priceMax = parseFloat(document.getElementById('price-max').value) || Infinity;
     //const stockFilter = document.getElementById('stock').value;
-    //console.log("en filterProducts: - voy a filtrar por busqueda: " + busqueda);
-    // Verificar la longitud del array products
-    if (productos.length === 0) {
-        //console.log("El array productos está vacío.");
-        return;
-    } else {
-        //console.log("El array productos tiene " + productos.length + " elementos.");
-    }
+    
     const filteredProducts = productos.filter(product => {
         // Filtro por término de búsqueda
-        //const matchesSearch = product.name.toLowerCase().includes(searchTerm) || 
-        //                    product.description.toLowerCase().includes(searchTerm);
+        const matchesSubCategory = product.subcategoria.toLowerCase().includes(busqueda.toLowerCase());
         
         // Filtro por categoría
-        const matchesCategory = busqueda === '' || product.categoria === busqueda;
-        
-        // Filtro por precio
-        //const matchesPrice = product.price >= priceMin && product.price <= priceMax;
-        
-        // Filtro por stock
-        /*
-        let matchesStock = true;
-        if (stockFilter === 'in-stock') {
-            matchesStock = product.stock >= 5;
-        } else if (stockFilter === 'low-stock') {
-            matchesStock = product.stock > 0 && product.stock < 5;
-        } else if (stockFilter === 'out-of-stock') {
-            matchesStock = product.stock === 0;
+        if (!matchesSubCategory){
+            const matchesCategory = busqueda === '' || product.categoria === busqueda;
+            return matchesCategory;
+        }else{
+            return matchesSubCategory;
         }
-        
-        return matchesSearch && matchesCategory && matchesPrice && matchesStock;
-        */
-       //console.log("en filterProducts: - voy a devolver matchesCategory: " + matchesCategory + " para producto: " + product.nombre);
-        return matchesCategory;
     });
     //console.log("en filterProducts: - llamo a mostrarProductos con filteredProducts: " + filteredProducts.length);
     mostrarProductos(filteredProducts);
