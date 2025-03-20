@@ -1,6 +1,3 @@
-import { productos } from '/Pedro/js/PedroEscaparate.js';
-
-import {mostrarProductos} from '/Pedro/js/cargaProductos.js';
 /*
 // Esperar a que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
@@ -192,21 +189,14 @@ export function filterProducts(busqueda= "") {
     //const priceMin = parseFloat(document.getElementById('price-min').value) || 0;
     //const priceMax = parseFloat(document.getElementById('price-max').value) || Infinity;
     //const stockFilter = document.getElementById('stock').value;
-    //console.log("en filterProducts: - voy a filtrar por busqueda: " + busqueda);
-    // Verificar la longitud del array products
-    if (productos.length === 0) {
-        //console.log("El array productos está vacío.");
-        return;
-    } else {
-        //console.log("El array productos tiene " + productos.length + " elementos.");
-    }
-    const filteredProducts = productos.filter(product => {
+    
+    const filteredProducts = products.filter(product => {
         // Filtro por término de búsqueda
         //const matchesSearch = product.name.toLowerCase().includes(searchTerm) || 
         //                    product.description.toLowerCase().includes(searchTerm);
         
         // Filtro por categoría
-        const matchesCategory = busqueda === '' || product.categoria === busqueda;
+        const matchesCategory = category === '' || product.categoria === busqueda;
         
         // Filtro por precio
         //const matchesPrice = product.price >= priceMin && product.price <= priceMax;
@@ -224,17 +214,16 @@ export function filterProducts(busqueda= "") {
         
         return matchesSearch && matchesCategory && matchesPrice && matchesStock;
         */
-       //console.log("en filterProducts: - voy a devolver matchesCategory: " + matchesCategory + " para producto: " + product.nombre);
         return matchesCategory;
     });
-    //console.log("en filterProducts: - llamo a mostrarProductos con filteredProducts: " + filteredProducts.length);
+    
     mostrarProductos(filteredProducts);
 }
 
 // Configurar los eventos de los enlaces del nav
 export function setupNavLinks() {
     const navLinks = document.querySelectorAll('nav a');
-    ////console.log("en setupNavLinks:");
+    
     navLinks.forEach(link => {
         link.addEventListener('click', function(event) {
             event.preventDefault();
