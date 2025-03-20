@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "nombre": "MacBook Pro 14 pulgadas",
+        "descripcion": "Portátil Apple con chip M3 Pro, 16GB de RAM unificada, 512GB SSD y pantalla Liquid Retina XDR.",
+        "imagen": "mcbook.png",
+        "precio": 1999.99,
+        "stock": 12,
+        "categoria": "ordenadores"
+    },
+    {
+        "id": 2,
+        "nombre": "HP Pavilion Gaming",
+        "descripcion": "Portátil gaming con procesador Intel Core i7, 16GB RAM, 1TB SSD, NVIDIA RTX 3060 y pantalla de 15.6 pulgadas 144Hz.",
+        "imagen": "hp.jpg",
+        "precio": 1299.99,
+        "stock": 8,
+        "categoria": "ordenadores"
+    },
+    {
+        "id": 3,
+        "nombre": "ASUS ROG Strix G16",
+        "descripcion": "Portátil gaming con Intel Core i9, 32GB RAM, 2TB SSD, NVIDIA RTX 4080 y pantalla de 16 pulgadas 240Hz.",
+        "imagen": "asus.png",
+        "precio": 2499.99,
+        "stock": 3,
+        "categoria": "ordenadores"
+    },
+    {
+        "id": 4,
+        "nombre": "Lenovo ThinkPad X1 Carbon",
+        "descripcion": "Ultrabook empresarial con Intel Core i7, 16GB RAM, 1TB SSD y pantalla de 14 pulgadas WQUXGA.",
+        "imagen": "lenovo.jpg",
+        "precio": 1799.99,
+        "stock": 6,
+        "categoria": "ordenadores"
+    },
+    {
+        "id": 5,
+        "nombre": "iPhone 15 Pro Max",
+        "descripcion": "Smartphone Apple con chip A17 Pro, cámara ProRAW de 48MP, pantalla Super Retina XDR de 6.7 pulgadas y hasta 1TB de almacenamiento.",
+        "imagen": "iphone15.jpg",
+        "precio": 1299.99,
+        "stock": 15,
+        "categoria": "smartphones"
+    },
+    {
+        "id": 6,
+        "nombre": "Samsung Galaxy S24 Ultra",
+        "descripcion": "Smartphone Android con Snapdragon 8 Gen 3, cámara de 200MP, S Pen incluido, pantalla Dynamic AMOLED 2X de 6.8 pulgadas.",
+        "imagen": "samsumgS24.png",
+        "precio": 1399.99,
+        "stock": 10,
+        "categoria": "smartphones"
+    },
+    {
+        "id": 7,
+        "nombre": "Google Pixel 8 Pro",
+        "descripcion": "Smartphone con Google Tensor G3, cámara con procesamiento de IA, pantalla OLED de 6.7 pulgadas y 7 años de actualizaciones.",
+        "imagen": "googlePixel.png",
+        "precio": 999.99,
+        "stock": 4,
+        "categoria": "smartphones"
+    },
+    {
+        "id": 8,
+        "nombre": "Xiaomi 14 Ultra",
+        "descripcion": "Smartphone con Snapdragon 8 Gen 3, cámara Leica de 1 pulgada, pantalla AMOLED de 6.7 pulgadas y carga rápida de 120W.",
+        "imagen": "xiaomi14.png",
+        "precio": 1199.99,
+        "stock": 0,
+        "categoria": "smartphones"
+    },
+    {
+        "id": 9,
+        "nombre": "PlayStation 5 Pro",
+        "descripcion": "Consola de videojuegos Sony con ray tracing mejorado, 2TB SSD, GPU más potente y soporte para 8K.",
+        "imagen": "playstation5.png",
+        "precio": 699.99,
+        "stock": 2,
+        "categoria": "consolas"
+    },
+    {
+        "id": 10,
+        "nombre": "Xbox Series X",
+        "descripcion": "Consola de videojuegos Microsoft con 12 teraflops de potencia, 1TB SSD, Quick Resume y Game Pass Ultimate.",
+        "imagen": "xbox.png",
+        "precio": 499.99,
+        "stock": 5,
+        "categoria": "consolas"
+    },
+    {
+        "id": 11,
+        "nombre": "Nintendo Switch OLED",
+        "descripcion": "Consola híbrida con pantalla OLED de 7 pulgadas, 64GB de almacenamiento y soporte para juegos en portátil y TV.",
+        "imagen": "oled.png",
+        "precio": 349.99,
+        "stock": 7,
+        "categoria": "consolas"
+    },
+    {
+        "id": 12,
+        "nombre": "Steam Deck",
+        "descripcion": "Consola portátil con AMD APU, 16GB RAM, SSD de 512GB y compatible con miles de juegos de PC.",
+        "imagen": "steam.png",
+        "precio": 649.99,
+        "stock": 0,
+        "categoria": "consolas"
+    }
+]
