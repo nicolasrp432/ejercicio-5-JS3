@@ -29,3 +29,52 @@ export function mostrarProductos(productos) {
         contenedor.innerHTML += productoHTML;
     });
 }
+
+export function generarMenu(productos) {
+    const categorias = {};
+
+    // Agrupar productos por categorías y subcategorías
+    productos.forEach(producto => {
+        if (!categorias[producto.categoria]) {
+            categorias[producto.categoria] = new Set();
+        }
+        // Dividir la subcategoría en palabras y añadir cada palabra como una subcategoría
+        const subcategorias = producto.subcategoria.split(' ');
+        subcategorias.forEach(subcategoria => {
+            categorias[producto.categoria].add(subcategoria);
+        });
+    });
+
+    // Crear el HTML del menú
+    const nav = document.getElementById('nav');
+    const ul = document.createElement('ul');
+
+    for (const categoria in categorias) {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#';
+        a.textContent = categoria;
+        a.dataset.category = categoria;
+        li.appendChild(a);
+
+        const subUl = document.createElement('ul');
+        subUl.classList.add('subcategoria');
+
+        categorias[categoria].forEach(subcategoria => {
+            if (subcategoria) {
+                const subLi = document.createElement('li');
+                const subA = document.createElement('a');
+                subA.href = '#';
+                subA.textContent = subcategoria;
+                subA.dataset.category = subcategoria;
+                subLi.appendChild(subA);
+                subUl.appendChild(subLi);
+            }
+        });
+
+        li.appendChild(subUl);
+        ul.appendChild(li);
+    }
+
+    nav.appendChild(ul);
+}
