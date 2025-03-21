@@ -2,7 +2,7 @@
 
 // document.addEventListener("DOMContentLoaded", () => {
 //     console.error("estoy en cargaProductos.js");
-//     fetch("/Entrega/json/productos.json")  // Ruta actualizada
+//     fetch("/json/productos.json")  // Ruta actualizada
 //         .then(response => response.json())
 //         .then(productos => mostrarProductos(productos))
 //         .catch(error => console.error("Error al cargar productos:", error));
@@ -15,7 +15,7 @@ export function mostrarProductos(productos) {
         const productoHTML = `
             <article class="product-card">
                 <figure>
-                    <img src="/Entrega/img/imgProductos/${producto.imagen}" alt="${producto.nombre}">
+                    <img src="/img/imgProductos/${producto.imagen}" alt="${producto.nombre}">
                 </figure>
                 <h2>${producto.nombre}</h2>
                 <p class="description">${producto.descripcion}</p>

@@ -23,6 +23,11 @@
     /* Ajustar el contenedor de productos */
     .productos-container {
         margin-left: 0;
+        margin-right: 0;
+    }
+
+    body { 
+        background: none;
     }
 
     /* Grid de productos pasa a 1 columna */

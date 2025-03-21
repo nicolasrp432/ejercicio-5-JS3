@@ -1,10 +1,10 @@
 export let productos = []
-import {mostrarProductos, generarMenu} from '/Entrega/js/cargaProductos.js';
-import { setupNavLinks  } from '/Entrega/js/nicolasFiltrado.js';
+import {mostrarProductos, generarMenu} from '/js/cargaProductos.js';
+import { setupNavLinks  } from '/js/Filtrado.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("estoy en PedroEscaparate.js");
-    fetch("/Entrega/json/productos.json")  // Cargar el archivo JSON desde la carpeta raíz
+    console.log("estoy en Escaparate.js");
+    fetch("/json/productos.json")  // Cargar el archivo JSON desde la carpeta raíz
         .then(response => response.json())  // Convertir a objeto JS
         .then(data => {
             productos.length = 0;  // Vaciar el array sin cambiar la referencia
