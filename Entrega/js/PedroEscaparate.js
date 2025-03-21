@@ -1,17 +1,19 @@
-console.log("estoy en PedroEscaparate.js");
-let products = []
-import {mostrarProductos} from './cargaProductos.js';
-//import { setupNavLinks  } from 'js/nicolasFiltrado.js';
-//import { filterProducts } from 'js//nicolasFiltrado.js';
- 
+export let productos = []
+import {mostrarProductos, generarMenu} from '/Entrega/js/cargaProductos.js';
+import { setupNavLinks  } from '/Entrega/js/nicolasFiltrado.js';
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("estoy en PedroEscaparate.js");
-    fetch("json/productos.json")  // Cargar el archivo JSON
+    fetch("/Entrega/json/productos.json")  // Cargar el archivo JSON desde la carpeta raíz
         .then(response => response.json())  // Convertir a objeto JS
-        .then(productos => mostrarProductos(productos))  // Procesar datos
-        .catch(error => console.error("Error al cargar productos:", error));
-
-        //setupNavLinks();
+        .then(data => {
+            productos.length = 0;  // Vaciar el array sin cambiar la referencia
+            productos.push(...data);  // Asignar los datos a la variable productos
+            //console.log("Productos cargados:", productos);  // Verificar los datos cargados
+            generarMenu(productos);  // Procesar datos
+            mostrarProductos(productos);  // Procesar datos
+            setupNavLinks();
+            //console.log("Después de mostrarProductos:", productos);  // Verificar que productos mantiene su valor
+        })
+        .catch(error => console.error("Error al cargar productos:", error));  
 });
-
