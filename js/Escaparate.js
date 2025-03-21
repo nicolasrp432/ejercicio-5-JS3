@@ -1,9 +1,8 @@
 export let productos = []
-import {mostrarProductos, generarMenu} from './js/cargaProductos.js';
-import { setupNavLinks  } from './js/Filtrado.js';
+import {mostrarProductos, generarMenu} from 'cargaProductos.js';
+import { setupNavLinks  } from '/Filtrado.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("estoy en Escaparate.js");
     fetch("/json/productos.json")  // Cargar el archivo JSON desde la carpeta raíz
         .then(response => response.json())  // Convertir a objeto JS
         .then(data => {
