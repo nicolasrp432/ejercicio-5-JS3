@@ -1,6 +1,6 @@
 export let productos = []
-import {mostrarProductos, generarMenu} from '/js/cargaProductos.js';
-import { setupNavLinks  } from '/js/Filtrado.js';
+import {mostrarProductos, generarMenu} from './js/cargaProductos.js';
+import { setupNavLinks  } from './js/Filtrado.js';
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("estoy en Escaparate.js");
