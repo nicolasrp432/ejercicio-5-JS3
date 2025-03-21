@@ -8,6 +8,16 @@
     background: linear-gradient(135deg, #ece9e6, #ffffff);
 }
 
+.carrito-link {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
 .carrito-contenido #items-carrito {
     flex: 1;
     max-width: 60%;
