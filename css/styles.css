@@ -75,6 +75,7 @@ header h1 {
     display: flex;
     width: 100%;
     max-width: 1400px;
+<<<<<<< HEAD
 }
 
 /* Menú lateral */
@@ -266,3 +267,6 @@ nav ul li a:hover {
     margin: 5px 0;
 }
 
+=======
+}
+>>>>>>> Pruebas

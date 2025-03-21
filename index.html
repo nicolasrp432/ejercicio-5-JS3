@@ -6,11 +6,13 @@
     <title>JS3 Shop</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/Movil.css">
+    <link rel="stylesheet" href="css/menunav.css">
+    <link rel="stylesheet" href="css/fichaProducto.css">
+    <link rel="stylesheet" href="css/vistamovil.css">
 </head>
 <body>
     <header>
-        <h1>JS3 Shop</h1>
+        <h1>JS3 Shop </h1>
         <!-- Botón de menú hamburguesa -->
         <button id="hamburger" class="hamburger-menu" aria-label="Menú">
             <span class="bar"></span>
@@ -21,33 +23,33 @@
     <div class="container">
         <!-- Menú lateral -->
         <nav id="nav">
-            <h2>Categorías</h2>
-            <ul>
+            <h2><a href="#" data-category="">Categorías</a></h2>
+            <!--<ul>
                 <li>
-                    <a href="#">Móviles</a>
+                    <a href="#" data-category="consolas">Móviles</a>
                     <ul class="subcategoria">
-                        <li><a href="#">iPhone</a></li>
-                        <li><a href="#">Samsung</a></li>
-                        <li><a href="#">Xiaomi</a></li>
+                        <li><a href="#" data-category="iPhone">iPhone</a></li>
+                        <li><a href="#" data-category="Samsung">Samsung</a></li>
+                        <li><a href="#" data-category="xiaomi">Xiaomi</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Ordenadores</a>
+                    <a href="#" data-category="ordenadores">Ordenadores</a>
                     <ul class="subcategoria">
-                        <li><a href="#">Portátiles</a></li>
-                        <li><a href="#">PC de Mesa</a></li>
-                        <li><a href="#">PC Gaming</a></li>
+                        <li><a href="#" data-category="laptop">Portátiles</a></li>
+                        <li><a href="#" data-category="desktop">PC de Mesa</a></li>
+                        <li><a href="#" data-category="gaming">PC Gaming</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Videojuegos</a>
+                    <a href="#" data-category="consolas">Videojuegos</a>
                     <ul class="subcategoria">
-                        <li><a href="#">Xbox</a></li>
-                        <li><a href="#">Playstation</a></li>
-                        <li><a href="#">Nintendo</a></li>
+                        <li><a href="#" data-category="xbox">Xbox</a></li>
+                        <li><a href="#" data-category="playstation">Playstation</a></li>
+                        <li><a href="#" data-category="nintendo">Nintendo</a></li>
                     </ul>
                 </li>
-            </ul>
+            </ul>-->
         </nav>
         <div class="productos-container">
             <main class="productos" id="productosJSON"></main>
@@ -62,7 +64,7 @@
             nav.classList.toggle('active');
         });
     </script>
-    <script type="module" src="js/PedroEscaparate.js"></script>
+    <script type="module" src="/js/Escaparate.js"></script>
 </body>
 </html>
 

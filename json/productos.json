@@ -6,7 +6,12 @@
         "imagen": "mcbook.png",
         "precio": 1999.99,
         "stock": 12,
+<<<<<<< HEAD
         "categoria": "ordenadores"
+=======
+        "categoria": "ordenadores",
+        "subcategoria": "laptop desktop"
+>>>>>>> Pruebas
     },
     {
         "id": 2,
@@ -15,7 +20,12 @@
         "imagen": "hp.jpg",
         "precio": 1299.99,
         "stock": 8,
+<<<<<<< HEAD
         "categoria": "ordenadores"
+=======
+        "categoria": "ordenadores",
+        "subcategoria": "laptop"
+>>>>>>> Pruebas
     },
     {
         "id": 3,
@@ -24,7 +34,12 @@
         "imagen": "asus.png",
         "precio": 2499.99,
         "stock": 3,
+<<<<<<< HEAD
         "categoria": "ordenadores"
+=======
+        "categoria": "ordenadores",
+        "subcategoria": "laptop gaming"
+>>>>>>> Pruebas
     },
     {
         "id": 4,
@@ -33,7 +48,13 @@
         "imagen": "lenovo.jpg",
         "precio": 1799.99,
         "stock": 6,
+<<<<<<< HEAD
         "categoria": "ordenadores"
+=======
+        "categoria": "ordenadores",
+        "subcategoria": "laptop"
+
+>>>>>>> Pruebas
     },
     {
         "id": 5,
@@ -42,7 +63,12 @@
         "imagen": "iphone15.jpg",
         "precio": 1299.99,
         "stock": 15,
+<<<<<<< HEAD
         "categoria": "smartphones"
+=======
+        "categoria": "smartphones",
+        "subcategoria": "iPhone"
+>>>>>>> Pruebas
     },
     {
         "id": 6,
@@ -51,7 +77,12 @@
         "imagen": "samsumgS24.png",
         "precio": 1399.99,
         "stock": 10,
+<<<<<<< HEAD
         "categoria": "smartphones"
+=======
+        "categoria": "smartphones",
+        "subcategoria": "Samsung"
+>>>>>>> Pruebas
     },
     {
         "id": 7,
@@ -60,7 +91,12 @@
         "imagen": "googlePixel.png",
         "precio": 999.99,
         "stock": 4,
+<<<<<<< HEAD
         "categoria": "smartphones"
+=======
+        "categoria": "smartphones",
+        "subcategoria": "Google"
+>>>>>>> Pruebas
     },
     {
         "id": 8,
@@ -69,7 +105,12 @@
         "imagen": "xiaomi14.png",
         "precio": 1199.99,
         "stock": 0,
+<<<<<<< HEAD
         "categoria": "smartphones"
+=======
+        "categoria": "smartphones",
+        "subcategoria": "Xiaomi"
+>>>>>>> Pruebas
     },
     {
         "id": 9,
@@ -78,7 +119,12 @@
         "imagen": "playstation5.png",
         "precio": 699.99,
         "stock": 2,
+<<<<<<< HEAD
         "categoria": "consolas"
+=======
+        "categoria": "consolas",
+        "subcategoria": "PlayStation"
+>>>>>>> Pruebas
     },
     {
         "id": 10,
@@ -87,7 +133,12 @@
         "imagen": "xbox.png",
         "precio": 499.99,
         "stock": 5,
+<<<<<<< HEAD
         "categoria": "consolas"
+=======
+        "categoria": "consolas",
+        "subcategoria": "Xbox"
+>>>>>>> Pruebas
     },
     {
         "id": 11,
@@ -96,7 +147,12 @@
         "imagen": "oled.png",
         "precio": 349.99,
         "stock": 7,
+<<<<<<< HEAD
         "categoria": "consolas"
+=======
+        "categoria": "consolas",
+        "subcategoria": "Nintendo"
+>>>>>>> Pruebas
     },
     {
         "id": 12,
@@ -105,6 +161,11 @@
         "imagen": "steam.png",
         "precio": 649.99,
         "stock": 0,
+<<<<<<< HEAD
         "categoria": "consolas"
+=======
+        "categoria": "consolas",
+        "subcategoria": ""
+>>>>>>> Pruebas
     }
 ]
