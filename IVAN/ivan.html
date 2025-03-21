@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS3 Shop</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/IVAN/css/ivan.css">
+    <link rel="stylesheet" href="/IVAN/css/fichaProducto.css">
 </head>
+
 <body>
     <header>
         <h1>JS3 Shop</h1>
-        <!-- Botón de menú hamburguesa -->
+
+        <!-- Menú hamburguesa -->
         <button id="hamburger" class="hamburger-menu" aria-label="Menú">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
+
+        <!-- Carrito de compras -->
+        <div class="cart-container">
+            <span class="cart-icon" id="cart-icon">🛒</span>
+            <span class="cart-count" id="cart-count">0</span>
+            <div class="cart-dropdown" id="cart-dropdown">
+                <h3>Carrito</h3>
+                <div id="cart-items"></div>
+                <p>Total: €<span id="cart-total">0.00</span></p>
+            </div>
+        </div>
     </header>
+
     <div class="container">
         <!-- Menú lateral -->
         <nav id="nav">
@@ -48,20 +64,82 @@
                 </li>
             </ul>
         </nav>
+
+        <!-- Productos -->
         <div class="productos-container">
             <main class="productos" id="productosJSON"></main>
-            <!-- Cargamos los productos desde el JSON -->
-            <!-- <script src="/Pedro/js/cargaProductos.js"></script> -->
         </div>
     </div>
+
+    <!-- Scripts -->
     <script>
-        document.getElementById('hamburger').addEventListener('click', function() {
-            var nav = document.getElementById('nav');
-            // Alternar la clase 'active' para mostrar u ocultar el menú
-            nav.classList.toggle('active');
+        // Menú hamburguesa
+        document.getElementById('hamburger').addEventListener('click', function () {
+            document.getElementById('nav').classList.toggle('active');
+        });
+
+        // Carrito de compras
+        let carrito = [];
+        const cartDropdown = document.getElementById('cart-dropdown');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartCount = document.getElementById('cart-count');
+        const cartTotal = document.getElementById('cart-total');
+
+        // Mostrar/Ocultar carrito
+        document.getElementById('cart-icon').addEventListener('click', () => {
+            cartDropdown.classList.toggle('active');
+        });
+
+        // Función para actualizar el carrito
+        function actualizarCarrito() {
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+
+            carrito.forEach(item => {
+                total += item.precio * item.cantidad;
+
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                itemElement.innerHTML = `${item.nombre} (x${item.cantidad}) - €${(item.precio * item.cantidad).toFixed(2)}`;
+                cartItemsContainer.appendChild(itemElement);
+            });
+
+            cartCount.textContent = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+            cartTotal.textContent = total.toFixed(2);
+        }
+
+        // Función para agregar productos al carrito
+        function agregarAlCarrito(producto) {
+            const productoExistente = carrito.find(item => item.id === producto.id);
+
+            if (productoExistente) {
+                productoExistente.cantidad += producto.cantidad;
+            } else {
+                carrito.push(producto);
+            }
+
+            actualizarCarrito();
+        }
+
+        // Capturar el evento del botón "Añadir al carrito"
+        document.addEventListener('click', function (e) {
+            if (e.target.classList.contains('btn-comprar')) {
+                const card = e.target.closest('.product-card');
+                const id = e.target.dataset.id;
+                const nombre = card.querySelector('h2').textContent;
+                const precio = parseFloat(card.querySelector('.price strong').textContent.replace('€', ''));
+                const cantidad = parseInt(card.querySelector('.cantidad-input').value);
+
+                const producto = { id, nombre, precio, cantidad };
+                agregarAlCarrito(producto);
+            }
         });
     </script>
+
+    <!-- Cargar productos -->
     <script type="module" src="/Pedro/js/PedroEscaparate.js"></script>
 </body>
+
 </html>
+
 
