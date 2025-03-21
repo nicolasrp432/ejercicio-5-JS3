@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-/*let products = []
-
-document.addEventListener("DOMContentLoaded", () => {
-    console.error("estoy en cargaProductos.js");
-    fetch("/Pedro/json/productos.json")  // Cargar el archivo JSON
-        .then(response => response.json())  // Convertir a objeto JS
-        .then(productos => mostrarProductos(productos))  // Procesar datos
-        .catch(error => console.error("Error al cargar productos:", error));
-});
-*/
-export function mostrarProductos(productos) {
-    const contenedor = document.getElementById("productosJSON");
-    productos.forEach(producto => {
-        // Crear el HTML de cada producto
-        const productoHTML = `
-            <article class="product-card">
-                <figure>
-                    <img src="img/imgProductos/${producto.imagen}" alt="${producto.nombre}">
-=======
 //let products = []
 
 // document.addEventListener("DOMContentLoaded", () => {
@@ -36,7 +16,6 @@ export function mostrarProductos(productos) {
             <article class="product-card">
                 <figure>
                     <img src="/img/imgProductos/${producto.imagen}" alt="${producto.nombre}">
->>>>>>> Pruebas
                 </figure>
                 <h2>${producto.nombre}</h2>
                 <p class="description">${producto.descripcion}</p>
@@ -49,8 +28,6 @@ export function mostrarProductos(productos) {
         contenedor.innerHTML += productoHTML;
     });
 }
-<<<<<<< HEAD
-=======
 
 export function generarMenu(productos) {
     const categorias = {};
@@ -100,4 +77,3 @@ export function generarMenu(productos) {
 
     nav.appendChild(ul);
 }
->>>>>>> Pruebas
