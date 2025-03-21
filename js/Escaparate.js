@@ -1,3 +1,4 @@
+/* Comentario para sincronizar la rama :(( */
 export let productos = []
 import {mostrarProductos, generarMenu} from './cargaProductos.js';
 import { setupNavLinks  } from './filtrado.js';

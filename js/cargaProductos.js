@@ -1,3 +1,4 @@
+/* Comentario para sincronizar la rama :(( */
 //let products = []
 
 // document.addEventListener("DOMContentLoaded", () => {

@@ -1,3 +1,4 @@
+/* Comentario para sincronizar la rama :(( */
 import { productos } from './escaparate.js';
 
 import {mostrarProductos} from './cargaProductos.js';
