@@ -3,7 +3,7 @@ import {mostrarProductos, generarMenu} from './cargaProductos.js';
 import { setupNavLinks  } from './Filtrado.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("../json/productos.json")  // Cargar el archivo JSON desde la carpeta raíz
+    fetch("json/productos.json")  // Cargar el archivo JSON desde la carpeta raíz
         .then(response => response.json())  // Convertir a objeto JS
         .then(data => {
             productos.length = 0;  // Vaciar el array sin cambiar la referencia
