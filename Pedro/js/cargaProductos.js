@@ -41,6 +41,7 @@ export function mostrarProductos(productos) {
             }
         });
     });
+    carrito.actualizarBadge();
 }
 
 function mostrarMensaje(mensaje) {
