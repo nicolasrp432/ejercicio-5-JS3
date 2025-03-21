@@ -1,8 +1,12 @@
-.carrito-container {
-    position: relative;
-    margin-left: auto;
-    margin-right: 20px;
+@import url('itemCarrito.css');
+.carrito-contenido {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 5%;
+    flex-wrap: wrap;
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
 }
+
 .carrito-link {
     background: none;
     border: none;
@@ -11,6 +15,82 @@
     text-decoration: none;
     display: inline-block;
     position: relative;
+}
+
+.carrito-contenido #items-carrito {
+    flex: 1;
+    max-width: 60%;
+}
+
+.carrito-contenido #items-carrito .producto {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.carrito-contenido #items-carrito .producto:hover {
+    transform: translateY(-5px);
+}
+
+.carrito-contenido #items-carrito .producto img {
+    width: 40px; /* Imagen aún más pequeña */
+    height: auto;
+    border-radius: 12px;
+    margin-right: 20px;
+}
+
+.carrito-contenido #items-carrito .info-producto {
+    flex-grow: 1;
+}
+
+.carrito-contenido #resumen-carrito {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 35%;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.carrito-contenido #resumen-carrito h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #4A90E2;
+}
+
+.carrito-contenido #resumen-carrito p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+}
+
+.carrito-contenido #btn-finalizar {
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 1.2rem;
+    color: white;
+    background: #4CAF50;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.carrito-contenido #btn-finalizar:hover {
+    background: #45a049;
+}
+
+.carrito-container {
+    position: relative;
+    margin-left: auto;
+    margin-right: 20px;
 }
 
 #btn-carrito {
