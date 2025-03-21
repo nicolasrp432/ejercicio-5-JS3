@@ -192,13 +192,6 @@ export function filterProducts(busqueda= "") {
     //const priceMin = parseFloat(document.getElementById('price-min').value) || 0;
     //const priceMax = parseFloat(document.getElementById('price-max').value) || Infinity;
     //const stockFilter = document.getElementById('stock').value;
-    // Verificar la longitud del array products
-    if (productos.length === 0) {
-        console.log("El array productos está vacío.");
-        return;
-    } else {
-        console.log("El array productos tiene " + productos.length + " elementos.");
-    }
     const filteredProducts = productos.filter(product => {
         // Filtro por término de búsqueda
         const matchesSubCategory = product.subcategoria.toLowerCase().includes(busqueda.toLowerCase());
