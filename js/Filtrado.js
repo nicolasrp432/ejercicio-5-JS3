@@ -1,6 +1,6 @@
-import { productos } from 'Escaparate.js';
+import { productos } from './Escaparate.js';
 
-import {mostrarProductos} from 'cargaProductos.js';
+import {mostrarProductos} from './cargaProductos.js';
 /*
 // Esperar a que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
