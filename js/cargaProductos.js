@@ -15,7 +15,7 @@ export function mostrarProductos(productos) {
         const productoHTML = `
             <article class="product-card">
                 <figure>
-                    <img src="/img/imgProductos/${producto.imagen}" alt="${producto.nombre}">
+                    <img src="../img/imgProductos/${producto.imagen}" alt="${producto.nombre}">
                 </figure>
                 <h2>${producto.nombre}</h2>
                 <p class="description">${producto.descripcion}</p>
