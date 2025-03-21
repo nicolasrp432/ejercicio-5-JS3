@@ -1,4 +1,4 @@
-import { productos } from './Escaparate.js';
+import { productos } from './escaparate.js';
 
 import {mostrarProductos} from './cargaProductos.js';
 /*

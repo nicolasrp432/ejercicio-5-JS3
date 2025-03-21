@@ -1,6 +1,6 @@
 export let productos = []
 import {mostrarProductos, generarMenu} from './cargaProductos.js';
-import { setupNavLinks  } from './Filtrado.js';
+import { setupNavLinks  } from './filtrado.js';
 
 document.addEventListener("DOMContentLoaded", () => {
     fetch("json/productos.json")  // Cargar el archivo JSON desde la carpeta raíz
