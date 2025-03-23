@@ -1,5 +1,4 @@
-
-// Import the functions you need from the SDKs you need
+// firebase-config.js
 // Tu configuración de Firebase (REEMPLAZA CON TUS VALORES REALES)
 const firebaseConfig = {
     apiKey: "AIzaSyCWlZn6Dy-IDXoVzVZe7SPkNMVTjQhPG1w",
