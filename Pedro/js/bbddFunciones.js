@@ -41,4 +41,45 @@ export async function obtenerJsonCompleto(){
       return null; // O puedes lanzar el error, dependiendo de cómo quieras manejarlo
     }
 
-}    
+}
+
+/**
+
+ * Carga un array de objetos JSON en la colección "productos" en Firestore.
+
+ * @param {array} productosArray Un array de objetos JSON que representan los productos.
+
+ * @returns {Promise<void>} Una promesa que se resuelve cuando todos los documentos se han creado.
+
+ */
+
+export async function uploadJSONToFirestore(productosArray) {
+
+  const db = firebase.firestore();
+
+  const collectionRef = db.collection("productos");
+
+
+  try {
+
+    for (const producto of productosArray) {
+      const id = producto.id; // Obtener el ID del producto
+
+      //TODO: delete id, firebase generate it
+
+      delete producto.id
+
+      await collectionRef.doc(id.toString()).set(producto); // Usar doc(id).set()
+
+
+    }
+
+    console.log("Todos los documentos se han cargado correctamente.");
+
+  } catch (error) {
+
+    console.error("Error al cargar los documentos:", error);
+
+  }
+
+}

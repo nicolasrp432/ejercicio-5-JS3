@@ -2,7 +2,7 @@ export let productos = []
 import {mostrarProductos} from '/Pedro/js/cargaProductos.js';
 import {generarMenu} from '/Pedro/js/cargaProductos.js';
 import { setupNavLinks  } from '/Pedro/js/nicolasFiltrado.js';
-import { primeraPrueba, obtenerJsonCompleto } from '/Pedro/js/bbddFunciones.js';
+import { primeraPrueba, obtenerJsonCompleto, uploadJSONToFirestore } from '/Pedro/js/bbddFunciones.js';
 
 
 /*
@@ -23,7 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 */
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("/Pedro/json/productos.json")  // Cargar el archivo JSON
+  /*  
+  fetch("/Pedro/json/productos.json")  // Cargar el archivo JSON
         .then(response => response.json())  // Convertir a objeto JS
         .then(data => {
             productos.length = 0;  // Vaciar el array sin cambiar la referencia
@@ -31,11 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("Productos cargados:", productos);  // Verificar los datos cargados
             generarMenu(productos);  // Procesar datos
             mostrarProductos(productos);  // Procesar datos
-            setupNavLinks();        
+            setupNavLinks();
+            uploadJSONToFirestore(productos)        
 
         })
         .catch(error => console.error("Error al cargar productos:", error));
-
+    */
     obtenerJsonCompleto()
     .then((jsonString) => {
 
@@ -43,10 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
     
           try {
     
-            const productos = JSON.parse(jsonString); // Convierte la cadena JSON a un objeto
+            productos = JSON.parse(jsonString); // Convierte la cadena JSON a un objeto
     
             // Ahora 'productos' debería ser un array de objetos
             console.log("Productos cargados:", productos);
+            generarMenu(productos);
+            setupNavLinks();
             mostrarProductos(productos); // Llama a tu función mostrarProductos
     
           } catch (error) {
