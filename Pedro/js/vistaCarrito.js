@@ -1,3 +1,4 @@
+import { updateStockBBDD } from './bbddFunciones.js';
 import { Carrito } from './Carrito.js';
 import { mostrarItem } from './itemCarrito.js';
 
@@ -17,6 +18,21 @@ function mostrarCarrito() {
         carrito.obtenerTotal().toFixed(2) + '€';
 }
 
+async function actualizarStockComprados() {
+    /* Vamos a intentar actualizar el stock en la BBDD  */
+    carrito.items.forEach(async item => {                    
+            try {
+                console.log("Updating stock for item:", item);
+                await updateStockBBDD(item.producto.id, item.producto.stock - item.cantidad);
+                //console.log("Stock updated successfully!");
+              } catch (error) {
+                console.error("Failed to update stock:", error);
+            
+              }
+            
+        });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     mostrarCarrito();
 
@@ -30,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('btn-finalizar').addEventListener('click', () => {
         if (carrito.items.length > 0) {
+            actualizarStockComprados();
             alert('¡Gracias por tu compra!');
             carrito.items = [];
             carrito.guardarCarrito();

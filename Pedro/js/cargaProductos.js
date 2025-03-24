@@ -12,7 +12,7 @@ export function mostrarProductos(productos) {
                 <figure>
                     <img src="/Pedro/img/imgProductos/${producto.imagen}" alt="${producto.nombre}">
                 </figure>
-                <h2>${producto.nombre}</h2>
+                <h2>33${producto.nombre}</h2>
                 <p class="description">${producto.descripcion}</p>
                 <p class="price">Precio: <strong>${producto.precio.toFixed(2)}€</strong></p>
                 <p class="stock">Stock: <strong>${producto.stock}</strong></p>
@@ -33,8 +33,7 @@ export function mostrarProductos(productos) {
         boton.addEventListener('click', (e) => {
             const productoId = parseInt(e.target.dataset.id);
             const cantidad = parseInt(e.target.parentElement.querySelector('.cantidad-input').value);
-            const producto = productos.find(p => p.id === productoId);
-            
+            const producto = productos.find(p => p.id == productoId);
             if (producto && cantidad > 0 && cantidad <= producto.stock) {
                 carrito.agregarProducto(producto, cantidad);
                 mostrarMensaje('Producto añadido al carrito');

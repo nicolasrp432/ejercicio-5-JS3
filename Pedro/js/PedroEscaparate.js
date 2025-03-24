@@ -1,6 +1,5 @@
 export let productos = []
-import {mostrarProductos} from '/Pedro/js/cargaProductos.js';
-import {generarMenu} from '/Pedro/js/cargaProductos.js';
+import {mostrarProductos, generarMenu} from './cargaProductos.js';
 import { setupNavLinks  } from '/Pedro/js/nicolasFiltrado.js';
 import { primeraPrueba, obtenerJsonCompleto, uploadJSONToFirestore } from '/Pedro/js/bbddFunciones.js';
 
@@ -48,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
             productos = JSON.parse(jsonString); // Convierte la cadena JSON a un objeto
     
             // Ahora 'productos' debería ser un array de objetos
-            console.log("Productos cargados:", productos);
             generarMenu(productos);
             setupNavLinks();
             mostrarProductos(productos); // Llama a tu función mostrarProductos

@@ -43,6 +43,37 @@ export async function obtenerJsonCompleto(){
 
 }
 
+export async function updateStockBBDD(documentId, newStockValue) {
+
+  // 1. Get a reference to the document
+  console.log('updateStockBBDD:'+documentId, newStockValue);
+  const collectionRef = firebase.firestore().collection("productos"); // Replace "your_collection_name" with the actual name of your collection
+
+  const documentRef = collectionRef.doc(documentId);
+  console.log('updateStockBBDD:'+documentId, newStockValue);
+  console.log(`documentRef: ${documentRef}`);
+  
+  try {
+
+    // 2. Update the "stock" field
+
+    await documentRef.update({
+
+      stock: newStockValue,
+
+    });
+
+    console.log(`Document with ID ${documentId} successfully updated stock to ${newStockValue}`);
+
+  } catch (error) {
+
+    console.error("Error updating document: ", error);
+
+  }
+
+}
+
+
 /**
 
  * Carga un array de objetos JSON en la colección "productos" en Firestore.
