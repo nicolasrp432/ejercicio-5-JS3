@@ -6,6 +6,9 @@
 }
 
 @media (max-width: 768px) {
+    body {
+        background: none;
+    }
     /* Mostrar el botón de hamburguesa en pantallas pequeñas */
     .hamburger-menu {
         display: block;
