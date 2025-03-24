@@ -4,6 +4,7 @@
     padding: 15px;
     border-bottom: 1px solid #ccc;
     transition: all 0.3s ease;
+    width: 160%;  /* Ocupa todo el ancho disponible */
 }
 
 .item-carrito:hover {
@@ -15,6 +16,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    width: 100%;  /* Asegura que los detalles ocupen todo el espacio disponible */
 }
 
 .item-carrito img {
@@ -32,8 +34,10 @@
 .item-carrito .detalles-principales {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     margin-bottom: 8px;
+    width: 100%;  /* Asegura que los detalles principales ocupen todo el ancho */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
 }
 
 .item-carrito .btn-eliminar {
@@ -84,11 +88,64 @@
     }
 
     /* Optimizaciones generales para impresión */
-    * {
+     /* {
         background-color: white !important;
         color: black !important;
         box-shadow: none !important;
         text-shadow: none !important;
         transition: none !important;
+    } */
+}
+
+/* Estilos responsive */
+@media screen and (max-width: 768px) {
+    .item-carrito {
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .item-carrito img {
+        width: 100px;
+        height: 80px;
+        margin-bottom: 10px;
+        margin-right: 0;
+        /* padding-left: 50px */
+    }
+
+    .item-carrito .detalles-principales {
+        flex-direction: column;
+        align-items: center;
+        gap: 1px;
+    }
+
+    .item-carrito .btn-eliminar {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    body { 
+        display: block;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .item-carrito {
+        padding: 8px;
+    }
+
+    .item-carrito img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .item-detalles {
+        font-size: 0.9em;
+    }
+
+    .item-carrito .btn-eliminar {
+        padding: 6px 12px;
+        font-size: 0.8em;
     }
 }
