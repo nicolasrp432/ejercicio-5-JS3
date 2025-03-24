@@ -152,9 +152,30 @@ html, body {
 
 
 @media print {
+    /* Ocultar el resumen del pedido en la vista de impresión */
+    
 
-    imprimir-footer {
-        display: none;
+    /* Ocultar el título "Imprimir Recibo" */
+    .resumen-footer h2 {
+        display: none !important;
     }
 
+    /* Asegurarse de que otros elementos se muestren bien en la impresión */
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: white;
+    }
+
+    /* Mostrar un estilo adecuado para el recibo */
+    .carrito-contenido {
+        padding: 0;
+        background: none;
+    }
+
+    /* Estilos para el botón de impresión, se puede ocultar si no se quiere mostrar */
+    .btn-imprimir {
+        display: none;
+    }
 }
+
