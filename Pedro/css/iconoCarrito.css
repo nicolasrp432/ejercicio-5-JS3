@@ -32,3 +32,16 @@ header .carrito-container {
     display: inline-flex;
     align-items: center;
 }
+
+@media (max-width: 768px) {
+    header .carrito-container {
+        position: absolute;
+        right: 60px; /* Space for hamburger menu */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    #carrito-badge {
+        transform: translate(50%, -50%);
+    }
+}
