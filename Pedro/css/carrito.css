@@ -5,6 +5,8 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .pagina {
@@ -27,6 +29,7 @@ html, body {
     flex-wrap: wrap;
     background: linear-gradient(135deg, #ece9e6, #ffffff);
     margin-bottom: 40px; /* Separar un poco el footer */
+    flex: 1; /* Asegura que ocupe el espacio disponible */
 }
 
 /* Estilo del enlace para volver */
@@ -100,8 +103,6 @@ html, body {
     font-size: 1.4rem;
 }
 
-
-
 .resumen-footer .btn-comprar:hover {
     background-color: #45a049;
 }
@@ -150,12 +151,24 @@ html, body {
     }
 }
 
+/* Asegura que el footer 'resumen-footer' (Recibo) siempre esté al final */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.carrito-contenido {
+    flex: 1; /* Deja que el contenido crezca y ocupe el espacio disponible */
+}
+
+/* Asegura que el footer 'resumen-footer' (Recibo) esté al final */
+.resumen-footer:nth-of-type(2) {
+    margin-top: auto; /* Empuja este footer hacia el final */
+}
 
 @media print {
     /* Ocultar el resumen del pedido en la vista de impresión */
-    
-
-    /* Ocultar el título "Imprimir Recibo" */
     .resumen-footer h2 {
         display: none !important;
     }
@@ -178,4 +191,5 @@ html, body {
         display: none;
     }
 }
+
 
