@@ -23,6 +23,7 @@
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
+    color: white;
 }
 
 /* Sección de los productos en el carrito */
