@@ -1,13 +1,18 @@
 @import url('itemCarrito.css');
 
+/* Contenedor común para que ambos elementos tengan el mismo ancho */
+.contenedor-comun {
+    width: 90%; /* Controla el ancho de ambos elementos */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+/* Contenedor principal del carrito */
 .carrito-contenido {
     display: flex;
     justify-content: space-between;
     padding: 40px 5%;
     flex-wrap: wrap;
     background: linear-gradient(135deg, #ece9e6, #ffffff);
-    max-width: 90%; /* Ajustar al mismo ancho que el resumen */
-    margin: 0 auto; /* Centrar el contenido */
 }
 
 /* Estilo del enlace para volver */
@@ -58,12 +63,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #fff;
+    background: #ffffff;
     padding: 20px 5%;
     border-top: 1px solid #ccc;
+    width: 41.5%;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 90%; /* Ajustar al mismo ancho que el carrito */
-    margin: 0 auto; /* Centrar el contenido */
 }
 
 /* Título del resumen */
@@ -131,3 +135,4 @@
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
