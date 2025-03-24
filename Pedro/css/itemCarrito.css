@@ -51,3 +51,44 @@
     background: #cc0000;
     transform: scale(1.05);
 }
+
+/* Estilos para impresión */
+@media print {
+
+    header {
+        display: none;  /* Oculta el header */
+    }
+
+    .item-carrito {
+        border-bottom: 1px solid #000;
+        padding: 10px 0;
+        page-break-inside: avoid;   
+    }
+
+    .item-carrito img {
+        display: none;  /* Oculta las imágenes */
+    }
+
+    .item-carrito .btn-eliminar {
+        display: none;  /* Oculta el botón de eliminar */
+    }
+
+    .item-carrito:hover {
+        transform: none;  /* Elimina efectos hover */
+        background-color: transparent;
+    }
+
+    .item-detalles {
+        color: #000;
+        font-size: 12pt;
+    }
+
+    /* Optimizaciones generales para impresión */
+    * {
+        background-color: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        transition: none !important;
+    }
+}
