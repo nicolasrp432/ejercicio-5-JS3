@@ -98,41 +98,30 @@
     background-color: #45a049;
 }
 
-/* Notificación flotante */
-.mensaje-flotante {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px;
-    border-radius: 5px;
-    animation: fadeIn 0.3s, fadeOut 0.3s 1.7s;
+/* Estilos de los elementos para pantallas pequeñas (modo responsive) */
+@media (max-width: 768px) {
+    /* Cambiar el diseño del footer para pantallas pequeñas */
+    .resumen-footer {
+        width: 100%; /* Asegura que ocupe todo el ancho disponible */
+        padding: 20px 10px; /* Ajusta el padding */
+        flex-direction: column; /* Cambiar a una columna en lugar de fila */
+        align-items: center; /* Centrar los elementos */
+        box-shadow: none; /* Eliminar el box-shadow en pantallas pequeñas */
+    }
+
+    /* Centrar el título y el total en pantallas pequeñas */
+    .resumen-footer h2,
+    .resumen-footer p {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* Hacer que el botón ocupe todo el ancho disponible */
+    .resumen-footer .btn-comprar {
+        width: 100%;
+        max-width: none;
+        margin-top: 15px; /* Añadir un poco de espacio arriba */
+    }
 }
 
-/* Animaciones para la notificación */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-
-/* Acciones dentro del producto */
-.product-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-/* Input para la cantidad */
-.cantidad-input {
-    width: 60px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
 
