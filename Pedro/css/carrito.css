@@ -1,12 +1,16 @@
 @import url('itemCarrito.css');
+
 .carrito-contenido {
     display: flex;
     justify-content: space-between;
     padding: 40px 5%;
     flex-wrap: wrap;
     background: linear-gradient(135deg, #ece9e6, #ffffff);
+    max-width: 90%; /* Ajustar al mismo ancho que el resumen */
+    margin: 0 auto; /* Centrar el contenido */
 }
 
+/* Estilo del enlace para volver */
 .carrito-link {
     background: none;
     border: none;
@@ -14,9 +18,9 @@
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
-    position: relative;
 }
 
+/* Sección de los productos en el carrito */
 .carrito-contenido #items-carrito {
     flex: 1;
     max-width: 60%;
@@ -37,8 +41,9 @@
     transform: translateY(-5px);
 }
 
+/* Imagen del producto */
 .carrito-contenido #items-carrito .producto img {
-    width: 40px; /* Imagen aún más pequeña */
+    width: 40px; 
     height: auto;
     border-radius: 12px;
     margin-right: 20px;
@@ -48,71 +53,48 @@
     flex-grow: 1;
 }
 
-.carrito-contenido #resumen-carrito {
+/* Footer del resumen del pedido */
+.resumen-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: #fff;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    max-width: 35%;
-    position: sticky;
-    top: 20px;
-    height: fit-content;
+    padding: 20px 5%;
+    border-top: 1px solid #ccc;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%; /* Ajustar al mismo ancho que el carrito */
+    margin: 0 auto; /* Centrar el contenido */
 }
 
-.carrito-contenido #resumen-carrito h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+/* Título del resumen */
+.resumen-footer h2 {
+    margin: 0;
+    font-size: 1.5rem;
     color: #4A90E2;
 }
 
-.carrito-contenido #resumen-carrito p {
+/* Total del pedido */
+.resumen-footer p {
+    margin: 0 20px;
     font-size: 1.4rem;
-    margin-bottom: 30px;
 }
 
-.carrito-contenido #btn-finalizar {
-    display: block;
-    width: 100%;
-    padding: 15px 0;
+/* Botón de finalizar compra */
+.resumen-footer .btn-comprar {
+    padding: 10px 20px;
     font-size: 1.2rem;
-    color: white;
-    background: #4CAF50;
-    border: none;
     border-radius: 12px;
     cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
     transition: background 0.3s;
 }
 
-.carrito-contenido #btn-finalizar:hover {
-    background: #45a049;
+.resumen-footer .btn-comprar:hover {
+    background-color: #45a049;
 }
 
-.carrito-container {
-    position: relative;
-    margin-left: auto;
-    margin-right: 20px;
-}
-
-#btn-carrito {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    position: relative;
-}
-
-#carrito-badge {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 12px;
-    display: none;
-}
-
+/* Notificación flotante */
 .mensaje-flotante {
     position: fixed;
     bottom: 20px;
@@ -124,6 +106,7 @@
     animation: fadeIn 0.3s, fadeOut 0.3s 1.7s;
 }
 
+/* Animaciones para la notificación */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -134,29 +117,17 @@
     to { opacity: 0; }
 }
 
+/* Acciones dentro del producto */
 .product-actions {
     display: flex;
     gap: 10px;
     margin-top: 10px;
 }
 
+/* Input para la cantidad */
 .cantidad-input {
     width: 60px;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
-}
-
-.btn-comprar {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.btn-comprar:hover {
-    background-color: #45a049;
 }
