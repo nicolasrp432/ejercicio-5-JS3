@@ -168,28 +168,44 @@ body {
 }
 
 @media print {
-    /* Ocultar el resumen del pedido en la vista de impresión */
-    .resumen-footer h2 {
-        display: none !important;
+    /* Agregar el título al principio de la página de impresión */
+    body::before {
+        content: "JS3 RECIBO"; /* El título que aparecerá en la parte superior de la página */
+        display: block;
+        font-size: 3rem; /* Ajusta el tamaño de la fuente como prefieras */
+        font-weight: bold;
+        text-align: center; /* Centrado del título */
+        margin-top: 20px; /* Espacio desde el borde superior de la página */
+        margin-bottom: 20px; /* Espacio entre el título y el contenido */
     }
 
-    /* Asegurarse de que otros elementos se muestren bien en la impresión */
+    /* Estilos adicionales si es necesario para productos o otros elementos */
+    .carrito-contenido .producto {
+        display: block; /* Asegura que cada producto se vea en una nueva línea */
+        margin-bottom: 15px; /* Espacio entre productos */
+    }
+
+    /* Asegúrate de que otros elementos se muestren correctamente */
     body {
         margin: 0;
         padding: 0;
         background-color: white;
     }
 
-    /* Mostrar un estilo adecuado para el recibo */
-    .carrito-contenido {
-        padding: 0;
-        background: none;
-    }
-
-    /* Estilos para el botón de impresión, se puede ocultar si no se quiere mostrar */
+    /* Estilos para ocultar el botón de impresión y otros elementos que no quieres que se impriman */
     .btn-imprimir {
         display: none;
     }
+
+    .resumen-footer h2 {
+        display: none !important;
+    }
 }
+
+
+
+
+
+
 
 
