@@ -26,6 +26,7 @@
     /* Ajustar el contenedor de productos */
     .productos-container {
         margin-left: 0;
+        margin-right: 0;
     }
 
     /* Grid de productos pasa a 1 columna */
