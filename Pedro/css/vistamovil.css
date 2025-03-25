@@ -47,6 +47,13 @@
     }
 }
 
+@media (max-width: 360px) {
+    header h1{
+        text-align: left;
+        padding-left: 10px;
+    }
+}
+
 /* Animación de carga para las tarjetas */
 @keyframes fadeInUp {
     from {
