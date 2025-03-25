@@ -16,8 +16,6 @@ export class Carrito {
     }
 
     eliminarProducto(productoId) {
-        console.log("eliminarProducto productoId:", productoId);
-        console.log("eliminarProducto items:", this.items);
         this.items = this.items.filter(item => item.producto.id != productoId);
         this.guardarCarrito();
         //this.actualizarBadge();

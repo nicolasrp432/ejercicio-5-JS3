@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
             } else {
         
-              console.log("No se pudo obtener el JSON de la colección.");
+              console.error("No se pudo obtener el JSON de la colección.");
         
 
             }

@@ -5,7 +5,7 @@ import { mostrarItem } from './itemCarrito.js';
 export const carrito = new Carrito();
 carrito.cargarCarrito();
 
-function mostrarCarrito() {
+export function mostrarCarrito() {
     const contenedor = document.getElementById('items-carrito');
     contenedor.innerHTML = '';
     carrito.items.forEach(item => {
@@ -21,9 +21,7 @@ export async function actualizarStockComprados() {
     /* Vamos a intentar actualizar el stock en la BBDD  */
     carrito.items.forEach(async item => {                    
             try {
-                console.log("Updating stock for item:", item);
                 await updateStockBBDD(item.producto.id, item.producto.stock - item.cantidad);
-                //console.log("Stock updated successfully!");
               } catch (error) {
                 console.error("Failed to update stock:", error);
             

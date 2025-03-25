@@ -25,12 +25,11 @@ export async function obtenerJsonCompleto(){
 export async function updateStockBBDD(documentId, newStockValue) {
 
   // 1. Get a reference to the document
-  console.log('updateStockBBDD:'+documentId, newStockValue);
-  const collectionRef = firebase.firestore().collection("productos"); // Replace "your_collection_name" with the actual name of your collection
+  const db = firebase.firestore();
+  const collectionRef = db.collection("productos");
+  //const collectionRef = firebase.firestore().collection("productos"); // Replace "your_collection_name" with the actual name of your collection
 
   const documentRef = collectionRef.doc(documentId);
-  console.log('updateStockBBDD:'+documentId, newStockValue);
-  console.log(`documentRef: ${documentRef}`);
   
   try {
 
@@ -42,8 +41,7 @@ export async function updateStockBBDD(documentId, newStockValue) {
 
     });
 
-    console.log(`Document with ID ${documentId} successfully updated stock to ${newStockValue}`);
-
+    
   } catch (error) {
 
     console.error("Error updating document: ", error);
