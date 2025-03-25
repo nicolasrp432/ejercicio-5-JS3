@@ -25,11 +25,12 @@ html, body {
 .carrito-contenido {
     display: flex;
     justify-content: space-between;
-    padding: 40px 5%;
+    padding: 5px 5%;
     flex-wrap: wrap;
     background: linear-gradient(135deg, #ece9e6, #ffffff);
-    margin-bottom: 40px; /* Separar un poco el footer */
+    margin-bottom: 5px; /* Separar un poco el footer */
     flex: 1; /* Asegura que ocupe el espacio disponible */
+    width: 80%;
 }
 
 /* Estilo del enlace para volver */
@@ -84,7 +85,7 @@ html, body {
     background: #ffffff;
     padding: 20px 5%;
     border-top: 1px solid #ccc;
-    width: 41.5%;
+    width: 80%;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
     margin-top: auto; /* Asegura que el footer se quede al final */
     margin-bottom: 20px; /* Para darle espacio si hay mucho contenido */
@@ -148,6 +149,11 @@ html, body {
         width: 100%;
         max-width: none;
         margin-top: 15px; /* Añadir un poco de espacio arriba */
+    }
+
+    .carrito-contenido {
+        width: 100%; /* Asegura que ocupe todo el ancho disponible */
+        padding: 70px 4px 0px; /* Ajusta el padding */
     }
 }
 
