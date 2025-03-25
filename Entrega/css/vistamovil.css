@@ -6,6 +6,9 @@
 }
 
 @media (max-width: 768px) {
+    body {
+        background: none;
+    }
     /* Mostrar el botón de hamburguesa en pantallas pequeñas */
     .hamburger-menu {
         display: block;
@@ -23,6 +26,7 @@
     /* Ajustar el contenedor de productos */
     .productos-container {
         margin-left: 0;
+        margin-right: 0;
     }
 
     /* Grid de productos pasa a 1 columna */
@@ -40,7 +44,14 @@
     }
     
     header {
-        position: fixed;
+        position: sticky;
+    }
+}
+
+@media (max-width: 360px) {
+    header h1{
+        text-align: left;
+        padding-left: 10px;
     }
 }
 
