@@ -74,6 +74,12 @@ header h1 {
 /* Contenedor principal */
 .container {
     display: flex;
-    width: 100%;
-    max-width: 1400px;
+    width: 80%;
+    margin-left: 20%; /* Espacio para el menú lateral */
+}
+
+/* Contenedor de productos */
+.productos-container {
+    flex-grow: 1;
+    padding: 20px;
 }
