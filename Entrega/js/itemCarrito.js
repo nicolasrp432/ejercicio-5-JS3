@@ -1,7 +1,7 @@
 export function mostrarItem(item) {
     const itemHTML = `
             <div class="item-carrito">
-                <img src="/Pedro/img/imgProductos/${item.producto.imagen}" alt="${item.producto.nombre}">
+                <img src="./img/imgProductos/${item.producto.imagen}" alt="${item.producto.nombre}">
                 <div class="item-detalles">
                     <div class="detalles-principales">
                         <h3>${item.producto.nombre}</h3>
