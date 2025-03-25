@@ -1,0 +1,68 @@
+/* Diseño adaptable para pantallas pequeñas */
+@media (max-width: 1024px) {
+    .productos {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background: none;
+    }
+    /* Mostrar el botón de hamburguesa en pantallas pequeñas */
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* Ocultar el menú lateral hasta que se active */
+    nav {
+        left: -650px; /* Oculto por defecto */
+    }
+
+    nav.active {
+        left: 0; /* Muestra el menú */
+    }
+
+    /* Ajustar el contenedor de productos */
+    .productos-container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Grid de productos pasa a 1 columna */
+    .productos {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card {
+        transform: none;
+        margin: 10px 0;
+    }
+    
+    .product-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    header {
+        position: sticky;
+    }
+}
+
+@media (max-width: 360px) {
+    header h1{
+        text-align: left;
+        padding-left: 10px;
+    }
+}
+
+/* Animación de carga para las tarjetas */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
