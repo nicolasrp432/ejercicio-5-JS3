@@ -1,6 +1,7 @@
 /* Menú lateral */
 nav {
-    width: 250px;
+    width: 17%;
+    min-width: 125px;
     background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
     padding: 20px;
     color: white;
@@ -91,10 +92,6 @@ h2 a {
 @media (min-width: 769px) {
     nav {
         left: 0; /* Siempre visible en desktop */
-    }
-    
-    .container {
-        margin-left: 250px;
     }
     
     .hamburger-menu {
