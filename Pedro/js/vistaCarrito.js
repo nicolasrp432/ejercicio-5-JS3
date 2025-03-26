@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('items-carrito').addEventListener('click', (e) => {
         if (e.target.classList.contains('btn-eliminar')) {
             const productoId = parseInt(e.target.dataset.id);
-            carrito.eliminarProducto(productoId);
+            const cantidad = parseInt(e.target.parentElement.querySelector('.cantidad-input').value);
+            carrito.eliminarCantidadProducto(productoId, cantidad);
             mostrarCarrito();
         }
     });

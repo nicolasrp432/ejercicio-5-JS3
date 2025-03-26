@@ -8,7 +8,10 @@ export function mostrarItem(item) {
                         <p>Precio: ${item.producto.precio.toFixed(2)}€</p>
                         <p>Cantidad: ${item.cantidad}</p>
                         <p>Subtotal: ${(item.producto.precio * item.cantidad).toFixed(2)}€</p>
-                        <button class="btn-eliminar" data-id="${item.producto.id}">Eliminar</button>
+                        <div class="product-actions">
+                            <input type="number" min="1" max="${item.cantidad}" value="1" class="cantidad-input">
+                            <button class="btn-eliminar" data-id="${item.producto.id}">Eliminar</button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -21,6 +21,21 @@ export class Carrito {
         //this.actualizarBadge();
     }
 
+    eliminarCantidadProducto(productoId, cantidadQuitar){
+        const itemExistente = this.items.find(item => item.producto.id == productoId);
+        if (itemExistente) {
+            console.log ("eliminarCantidadProducto, producto a actualizar:" + productoId)
+            itemExistente.cantidad -= cantidadQuitar;
+        } else {
+            console.error ("eliminarCantidadProducto, no se encuentra el producto:" + productoId)
+        }
+        if (itemExistente.cantidad <=0){
+            this.eliminarProducto(productoId)
+        }else{
+            this.guardarCarrito();
+        }
+    }
+
     obtenerTotal() {
         return this.items.reduce((total, item) => {
             return total + (item.producto.precio * item.cantidad);
