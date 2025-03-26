@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/fichaProducto.css">
     <link rel="stylesheet" href="./css/vistamovil.css">
     <link rel="stylesheet" href="./css/iconoCarrito.css">
-
+    <link rel="stylesheet" href="./css/carrito-desplegable.css">
 </head>
 <body>
     <header>
@@ -25,6 +25,17 @@
                 🛒
                 <span id="carrito-badge">0</span>
             </a>
+            <div class="carrito-miniatura">
+                <h3>Mi Carrito</h3>
+                <div class="carrito-items" id="carrito-items-miniatura">
+                    <!-- Los items del carrito se insertarán aquí dinámicamente -->
+                </div>
+                <div class="carrito-total">
+                    <span>Total:</span>
+                    <span id="carrito-miniatura-total">0.00€</span>
+                </div>
+                <a href="carrito.html" class="ver-carrito-btn">Ver carrito completo</a>
+            </div>
         </div>
     </header>
     <div class="container">

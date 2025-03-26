@@ -38,10 +38,12 @@ export function mostrarProductos(productos) {
             if (producto && cantidad > 0 && cantidad <= producto.stock) {
                 carrito.agregarProducto(producto, cantidad);
                 mostrarMensaje('Producto añadido al carrito');
+                actualizarMiniCarrito(); // Añadir esta línea
             }
         });
     });
     carrito.actualizarBadge();
+    actualizarMiniCarrito(); // Añadir esta línea
 }
 
 function mostrarMensaje(mensaje) {
@@ -102,4 +104,32 @@ export function generarMenu(productos) {
     }
 
     nav.appendChild(ul);
+}
+
+function actualizarMiniCarrito() {
+    const contenedor = document.getElementById('carrito-items-miniatura');
+    const total = document.getElementById('carrito-miniatura-total');
+    
+    if (!contenedor) return;
+    
+    if (carrito.items.length === 0) {
+        contenedor.innerHTML = '<div class="carrito-vacio">El carrito está vacío</div>';
+        total.textContent = '0.00€';
+        return;
+    }
+
+    contenedor.innerHTML = '';
+    carrito.items.forEach(item => {
+        contenedor.innerHTML += `
+            <div class="carrito-item">
+                <img src="img/imgProductos/${item.producto.imagen}" alt="${item.producto.nombre}">
+                <div class="carrito-item-info">
+                    <p class="carrito-item-nombre">${item.producto.nombre}</p>
+                    <p class="carrito-item-precio">${item.cantidad}x ${item.producto.precio.toFixed(2)}€</p>
+                </div>
+            </div>
+        `;
+    });
+    
+    total.textContent = carrito.obtenerTotal().toFixed(2) + '€';
 }
