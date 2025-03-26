@@ -26,14 +26,14 @@ export function mostrarProductos(productos) {
         `;
 
         contenedor.innerHTML += productoHTML;
+        
     });
-
     // Añadir eventos a los botones de compra
     document.querySelectorAll('.btn-comprar').forEach(boton => {
         boton.addEventListener('click', (e) => {
             const productoId = parseInt(e.target.dataset.id);
             const cantidad = parseInt(e.target.parentElement.querySelector('.cantidad-input').value);
-            const producto = productos.find(p => p.id === productoId);
+            const producto = productos.find(p => p.id == productoId);
             
             if (producto && cantidad > 0 && cantidad <= producto.stock) {
                 carrito.agregarProducto(producto, cantidad);

@@ -16,7 +16,7 @@ export class Carrito {
     }
 
     eliminarProducto(productoId) {
-        this.items = this.items.filter(item => item.producto.id !== productoId);
+        this.items = this.items.filter(item => item.producto.id != productoId);
         this.guardarCarrito();
         //this.actualizarBadge();
     }
