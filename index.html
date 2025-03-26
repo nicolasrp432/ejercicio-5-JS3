@@ -6,19 +6,26 @@
     <title>JS3 Shop</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/menuNav.css">
+    <link rel="stylesheet" href="./css/menunav.css">
     <link rel="stylesheet" href="./css/fichaProducto.css">
-    <link rel="stylesheet" href="./css/vistaMovil.css">
+    <link rel="stylesheet" href="./css/vistamovil.css">
+    <link rel="stylesheet" href="./css/iconoCarrito.css">
+
 </head>
 <body>
     <header>
-        <h1>JS3 Shop </h1>
-        <!-- Botón de menú hamburguesa -->
+        <h1>JS3 Shop</h1>
         <button id="hamburger" class="hamburger-menu" aria-label="Menú">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
+        <div class="carrito-container">
+            <a href="carrito.html" class="carrito-link">
+                🛒
+                <span id="carrito-badge">0</span>
+            </a>
+        </div>
     </header>
     <div class="container">
         <!-- Menú lateral -->

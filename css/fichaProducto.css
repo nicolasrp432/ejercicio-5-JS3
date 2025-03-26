@@ -1,11 +1,4 @@
-/* Comentario para sincronizar la rama :(( */
-/* Contenedor de productos */
-.productos-container {
-    flex-grow: 1;
-    padding: 20px;
-    margin-left: 64px; /* Espacio para el menú lateral */
-    margin-right: 29px;
-}
+
 
 /* Grid de productos - 3 columnas */
 .productos {
@@ -125,3 +118,13 @@
     transition: var(--hover-transition);    
     margin: 5px 0;
 }
+
+.btn-comprar {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }

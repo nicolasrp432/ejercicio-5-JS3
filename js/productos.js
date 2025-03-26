@@ -1,4 +1,3 @@
-/* Comentario para sincronizar la rama :(( */
 document.addEventListener("DOMContentLoaded", function() {
     fetch("productos.html")
         .then(response => response.text())

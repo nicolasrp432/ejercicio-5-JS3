@@ -1,33 +1,58 @@
-/* Comentario para sincronizar la rama :(( */
-//let products = []
+import { Carrito } from './Carrito.js';
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     console.error("estoy en cargaProductos.js");
-//     fetch("/json/productos.json")  // Ruta actualizada
-//         .then(response => response.json())
-//         .then(productos => mostrarProductos(productos))
-//         .catch(error => console.error("Error al cargar productos:", error));
-// });
+const carrito = new Carrito();
+carrito.cargarCarrito();
 
 export function mostrarProductos(productos) {
     const contenedor = document.getElementById("productosJSON");
-    contenedor.innerHTML = "";
+    contenedor.innerHTML = '';
     productos.forEach(producto => {
         const productoHTML = `
             <article class="product-card">
                 <figure>
-                    <img src="./img/imgProductos/${producto.imagen}" alt="${producto.nombre}">
+                    <img src="img/imgProductos/${producto.imagen}" alt="${producto.nombre}">
                 </figure>
                 <h2>${producto.nombre}</h2>
                 <p class="description">${producto.descripcion}</p>
                 <p class="price">Precio: <strong>${producto.precio.toFixed(2)}€</strong></p>
                 <p class="stock">Stock: <strong>${producto.stock}</strong></p>
+                <div class="product-actions">
+                    <input type="number" min="1" max="${producto.stock}" value="1" class="cantidad-input">
+                    <button class="btn-comprar" data-id="${producto.id}">
+                        Añadir al carrito
+                    </button>
+                </div>
             </article>
         `;
 
-        // Insertar el producto en el contenedor
         contenedor.innerHTML += productoHTML;
     });
+
+    // Añadir eventos a los botones de compra
+    document.querySelectorAll('.btn-comprar').forEach(boton => {
+        boton.addEventListener('click', (e) => {
+            const productoId = parseInt(e.target.dataset.id);
+            const cantidad = parseInt(e.target.parentElement.querySelector('.cantidad-input').value);
+            const producto = productos.find(p => p.id === productoId);
+            
+            if (producto && cantidad > 0 && cantidad <= producto.stock) {
+                carrito.agregarProducto(producto, cantidad);
+                mostrarMensaje('Producto añadido al carrito');
+            }
+        });
+    });
+    carrito.actualizarBadge();
+}
+
+function mostrarMensaje(mensaje) {
+    const mensajeElement = document.createElement('div');
+    mensajeElement.className = 'mensaje-flotante';
+    mensajeElement.textContent = mensaje;
+    document.body.appendChild(mensajeElement);
+
+    setTimeout(() => {
+        mensajeElement.remove();
+    }, 2000);
 }
 
 export function generarMenu(productos) {
