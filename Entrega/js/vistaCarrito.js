@@ -1,13 +1,13 @@
+import { updateStockBBDD } from './bbddFunciones.js';
 import { Carrito } from './Carrito.js';
 import { mostrarItem } from './itemCarrito.js';
 
-const carrito = new Carrito();
+export const carrito = new Carrito();
 carrito.cargarCarrito();
 
-function mostrarCarrito() {
+export function mostrarCarrito() {
     const contenedor = document.getElementById('items-carrito');
-    contenedor.innerHTML = '';
-    
+    contenedor.innerHTML = '';    
     carrito.items.forEach(item => {
         const itemHTML = mostrarItem(item);
         contenedor.innerHTML += itemHTML;
@@ -17,17 +17,32 @@ function mostrarCarrito() {
         carrito.obtenerTotal().toFixed(2) + '€';
 }
 
+export async function actualizarStockComprados() {
+    /* Vamos a intentar actualizar el stock en la BBDD  */
+    carrito.items.forEach(async item => {                    
+            try {
+                await updateStockBBDD(item.producto.id, item.producto.stock - item.cantidad);
+              } catch (error) {
+                console.error("Failed to update stock:", error);
+            
+              }
+            
+        });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     mostrarCarrito();
 
     document.getElementById('items-carrito').addEventListener('click', (e) => {
         if (e.target.classList.contains('btn-eliminar')) {
             const productoId = parseInt(e.target.dataset.id);
-            carrito.eliminarProducto(productoId);
+            const cantidad = parseInt(e.target.parentElement.querySelector('.cantidad-input').value);
+            carrito.eliminarCantidadProducto(productoId, cantidad);
             mostrarCarrito();
         }
     });
 
+    /* Este boton ya no existe, este proceso pasa al boton Imprimir Recibo
     document.getElementById('btn-finalizar').addEventListener('click', () => {
         if (carrito.items.length > 0) {
             alert('¡Gracias por tu compra!');
@@ -35,5 +50,5 @@ document.addEventListener('DOMContentLoaded', () => {
             carrito.guardarCarrito();
             mostrarCarrito();
         }
-    });
+    });*/
 });
