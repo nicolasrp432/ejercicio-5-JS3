@@ -1,0 +1,217 @@
+@import url('itemCarrito.css');
+
+/* Asegúrate de que el contenedor principal ocupe toda la altura de la página */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.pagina {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Contenedor común para que ambos elementos tengan el mismo ancho */
+.contenedor-comun {
+    width: 90%; /* Controla el ancho de ambos elementos */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+/* Contenedor principal del carrito (se ajusta al contenido) */
+.carrito-contenido {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 5%;
+    flex-wrap: wrap;
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
+    margin-bottom: 5px; /* Separar un poco el footer */
+    flex: 1; /* Asegura que ocupe el espacio disponible */
+    width: 60%;
+}
+
+/* Estilo del enlace para volver */
+.carrito-link {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+}
+
+/* Sección de los productos en el carrito */
+.carrito-contenido #items-carrito {
+    flex: 1;
+    max-width: 60%;
+}
+
+.carrito-contenido #items-carrito .producto {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.carrito-contenido #items-carrito .producto:hover {
+    transform: translateY(-5px);
+}
+
+/* Imagen del producto */
+.carrito-contenido #items-carrito .producto img {
+    width: 40px; 
+    height: auto;
+    border-radius: 12px;
+    margin-right: 20px;
+}
+
+.carrito-contenido #items-carrito .info-producto {
+    flex-grow: 1;
+}
+
+/* Footer del resumen del pedido */
+.resumen-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 20px 5%;
+    border-top: 1px solid #ccc;
+    width: 60%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: auto; /* Asegura que el footer se quede al final */
+    margin-bottom: 20px; /* Para darle espacio si hay mucho contenido */
+}
+
+/* Título del resumen */
+.resumen-footer h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #4A90E2;
+}
+
+/* Total del pedido */
+.resumen-footer p {
+    margin: 0 20px;
+    font-size: 1.4rem;
+}
+
+.resumen-footer .btn-comprar:hover {
+    background-color: #45a049;
+}
+
+/* Estilo del botón de imprimir */
+.btn-imprimir {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    transition: background 0.3s;
+    margin-left: 10px;
+}
+
+.btn-imprimir:hover {
+    background-color: #2980b9;
+}
+
+
+
+/* Estilos de los elementos para pantallas pequeñas (modo responsive) */
+@media (max-width: 768px) {
+    /* Cambiar el diseño del footer para pantallas pequeñas */
+    .resumen-footer {
+        width: 100%; /* Asegura que ocupe todo el ancho disponible */
+        padding: 20px 10px; /* Ajusta el padding */
+        flex-direction: column; /* Cambiar a una columna en lugar de fila */
+        align-items: center; /* Centrar los elementos */
+        box-shadow: none; /* Eliminar el box-shadow en pantallas pequeñas */
+    }
+
+    /* Centrar el título y el total en pantallas pequeñas */
+    .resumen-footer h2,
+    .resumen-footer p {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* Hacer que el botón ocupe todo el ancho disponible */
+    .resumen-footer .btn-comprar {
+        width: 100%;
+        max-width: none;
+        margin-top: 15px; /* Añadir un poco de espacio arriba */
+    }
+
+    .carrito-contenido {
+        width: 100%; /* Asegura que ocupe todo el ancho disponible */
+        padding: 70px 4px 0px; /* Ajusta el padding */
+    }
+}
+
+/* Asegura que el footer 'resumen-footer' (Recibo) siempre esté al final */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.carrito-contenido {
+    flex: 1; /* Deja que el contenido crezca y ocupe el espacio disponible */
+}
+
+/* Asegura que el footer 'resumen-footer' (Recibo) esté al final */
+.resumen-footer:nth-of-type(2) {
+    margin-top: auto; /* Empuja este footer hacia el final */
+}
+
+@media print {
+    /* Agregar el título al principio de la página de impresión */
+    body::before {
+        content: "JS3 RECIBO"; /* El título que aparecerá en la parte superior de la página */
+        display: block;
+        font-size: 3rem; /* Ajusta el tamaño de la fuente como prefieras */
+        font-weight: bold;
+        text-align: center; /* Centrado del título */
+        margin-top: 20px; /* Espacio desde el borde superior de la página */
+        margin-bottom: 20px; /* Espacio entre el título y el contenido */
+    }
+
+    /* Estilos adicionales si es necesario para productos o otros elementos */
+    .carrito-contenido .producto {
+        display: block; /* Asegura que cada producto se vea en una nueva línea */
+        margin-bottom: 15px; /* Espacio entre productos */
+    }
+
+    /* Asegúrate de que otros elementos se muestren correctamente */
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: white;
+    }
+
+    /* Estilos para ocultar el botón de impresión y otros elementos que no quieres que se impriman */
+    .btn-imprimir {
+        display: none;
+    }
+
+    .resumen-footer h2 {
+        display: none !important;
+    }
+}
+
+
+
+
+
+
+
+
