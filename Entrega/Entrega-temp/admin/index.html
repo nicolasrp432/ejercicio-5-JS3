@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Productos</title>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <h1>Administración de Productos</h1>
+    <button id="btnAgregar">Agregar Producto</button>
+    <table id="tablaProductos">
+        <thead>
+            <tr>
+                <th style="display: none;">ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Imagen</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Categoría</th>
+                <th>Subcategoría</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Los productos se cargarán aquí dinámicamente -->
+        </tbody>
+    </table>
+    <script src="../js/bbddConfig.js"></script>
+    <script src="../js/adminFunciones.js"></script>
+</body>
+</html>
