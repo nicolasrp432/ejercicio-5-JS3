@@ -1,0 +1,181 @@
+.item-carrito {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    transition: all 0.3s ease;
+    width: 160%;  /* Ocupa todo el ancho disponible */
+    justify-content: space-between;
+}
+
+.item-carrito:hover {
+    background-color: #f8f8f8;
+    transform: translateX(5px);
+}
+
+.item-carrito .item-detalles {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;  /* Asegura que los detalles ocupen todo el espacio disponible */
+}
+
+.item-carrito img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.item-carrito img:hover {
+    transform: scale(1.1);
+}
+
+.item-carrito .detalles-principales {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    width: 100%;  /* Asegura que los detalles principales ocupen todo el ancho */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+}   
+    h3 {
+        max-width: 100px;
+    }
+
+.item-carrito .btn-eliminar {
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.item-carrito .btn-eliminar:hover {
+    background: #cc0000;
+    transform: scale(1.05);
+}
+
+.item-carrito .nombre-producto {
+    max-width: 250px;         /* Ancho máximo para el nombre */
+    overflow: hidden;         /* Oculta el texto que exceda */
+    text-overflow: ellipsis;  /* Muestra ... si el texto es muy largo */
+    white-space: nowrap;      /* Evita saltos de línea */
+}
+
+/* Estilos para impresión */
+@media print {
+
+    header {
+        display: none;  /* Oculta el header */
+    }
+
+    .item-carrito {
+        border-bottom: 1px solid #000;
+        padding: 10px 0;
+        page-break-inside: avoid;   
+    }
+
+    .item-carrito img {
+        display: none;  /* Oculta las imágenes */
+    }
+
+    .item-carrito .btn-eliminar {
+        display: none;  /* Oculta el botón de eliminar */
+    }
+
+    .item-carrito:hover {
+        transform: none;  /* Elimina efectos hover */
+        background-color: transparent;
+    }
+
+    .item-detalles {
+        color: #000;
+        font-size: 12pt;
+    }
+
+    .item-carrito .nombre-producto {
+        max-width: 400px;     /* Ancho máximo más grande para impresión */
+        white-space: normal;  /* Permite que el texto se ajuste en varias líneas */
+    }
+
+    /* Optimizaciones generales para impresión */
+     /* {
+        background-color: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        transition: none !important;
+    } */
+}
+
+@media (max-width: 768px) {
+    header {
+        position: absolute;
+    }
+}
+
+/* Estilos responsive */
+@media screen and (max-width: 480px) {
+    .item-carrito {
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .item-carrito img {
+        width: 100px;
+        height: 80px;
+        margin-bottom: 10px;
+        margin-right: 0;
+        /* padding-left: 50px */
+    }
+
+    .item-carrito .detalles-principales {
+        flex-direction: column;
+        align-items: center;
+        gap: 1px;
+    }
+
+    .item-carrito .btn-eliminar {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .item-carrito .nombre-producto {
+        max-width: 200px;    /* Ancho máximo más pequeño para móviles */
+    }
+
+    body { 
+        display: block;
+    }
+
+    h3{
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .item-carrito {
+        padding: 8px;
+    }
+
+    .item-carrito img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .item-detalles {
+        font-size: 0.9em;
+    }
+
+    .item-carrito .btn-eliminar {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+}

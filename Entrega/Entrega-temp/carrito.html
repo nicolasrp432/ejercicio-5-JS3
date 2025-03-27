@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - JS3 Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/fichaProducto.css">
+    <link rel="stylesheet" href="css/itemCarrito.css">
+    <link rel="stylesheet" href="css/carrito.css">
+    <link rel="stylesheet" href="css/iconoVolver.css">
+</head>
+<body>
+    <header>
+        <h1>JS3 Shop - Carrito</h1>
+        <div class="volver-container">
+            <!-- Botón con icono moderno de casa -->
+            <a href="index.html" class="volver-link">
+                <i class="fas fa-house"></i> <!-- Icono de casa moderno -->
+            </a>
+        </div>
+    </header>
+
+    <main class="carrito-contenido">
+        <!-- Productos en el carrito -->
+        <div id="items-carrito"></div>
+    </main>
+
+    <!-- Resumen del pedido en el primer footer, sin márgenes ni espacios -->
+    <footer class="resumen-footer">
+        <h2>Resumen del pedido</h2>
+        <p>Total: <strong id="total-carrito">0.00€</strong></p>
+    </footer>
+
+    <!-- Segundo footer para imprimir recibo -->
+    <footer class="resumen-footer">
+        <h2>Recibo</h2>
+        <button id="btn-imprimir" class="btn-imprimir">Imprimir Recibo</button>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script type="module" src="./js/bbddConfig.js"></script>
+    
+    <script type="module" src="js/vistaCarrito.js"></script>
+    <script type="module" src="js/imprimir.js"></script>
+
+</body>
+</html>
+
+
+
