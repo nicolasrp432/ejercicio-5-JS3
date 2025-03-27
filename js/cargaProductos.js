@@ -3,14 +3,34 @@ import { Carrito } from './Carrito.js';
 const carrito = new Carrito();
 carrito.cargarCarrito();
 
-export function mostrarProductos(productos) {
+const UNSPLASH_ACCESS_KEY = 'TU_API_KEY_AQUI'; // Reemplaza con tu API key
+
+async function obtenerImagenAleatoria(query) {
+    try {
+        const response = await fetch(`https://api.unsplash.com/photos/random?query=${encodeURIComponent(query)}&client_id=${VRRXLbCWvoI6bNUtcamWooOIZy3_BC3TsC9od1TDiUc}`);
+        if (!response.ok) throw new Error('Error en la respuesta de Unsplash');
+        
+        const data = await response.json();
+        return data.urls.small;
+    } catch (error) {
+        console.error('Error al obtener imagen:', error);
+        return 'img/imgProductos/default.jpg'; // Asegúrate de tener una imagen por defecto
+    }
+}
+
+export async function mostrarProductos(productos) {
     const contenedor = document.getElementById("productosJSON");
     contenedor.innerHTML = '';
-    productos.forEach(producto => {
+    
+    for (const producto of productos) {
+        let imagenSrc = producto.imagen ? 
+            `img/imgProductos/${producto.imagen}` : 
+            await obtenerImagenAleatoria(producto.nombre);
+
         const productoHTML = `
             <article class="product-card">
                 <figure>
-                    <img src="img/imgProductos/${producto.imagen}" alt="${producto.nombre}">
+                    <img src="${imagenSrc}" alt="${producto.nombre}">
                 </figure>
                 <h2>${producto.nombre}</h2>
                 <p class="description">${producto.descripcion}</p>
@@ -26,22 +46,24 @@ export function mostrarProductos(productos) {
         `;
 
         contenedor.innerHTML += productoHTML;
-    });
-
+        
+    }
     // Añadir eventos a los botones de compra
     document.querySelectorAll('.btn-comprar').forEach(boton => {
         boton.addEventListener('click', (e) => {
             const productoId = parseInt(e.target.dataset.id);
             const cantidad = parseInt(e.target.parentElement.querySelector('.cantidad-input').value);
-            const producto = productos.find(p => p.id === productoId);
+            const producto = productos.find(p => p.id == productoId);
             
             if (producto && cantidad > 0 && cantidad <= producto.stock) {
                 carrito.agregarProducto(producto, cantidad);
                 mostrarMensaje('Producto añadido al carrito');
+                actualizarMiniCarrito(); // Añadir esta línea
             }
         });
     });
     carrito.actualizarBadge();
+    actualizarMiniCarrito(); // Añadir esta línea
 }
 
 function mostrarMensaje(mensaje) {
@@ -102,4 +124,32 @@ export function generarMenu(productos) {
     }
 
     nav.appendChild(ul);
+}
+
+function actualizarMiniCarrito() {
+    const contenedor = document.getElementById('carrito-items-miniatura');
+    const total = document.getElementById('carrito-miniatura-total');
+    
+    if (!contenedor) return;
+    
+    if (carrito.items.length === 0) {
+        contenedor.innerHTML = '<div class="carrito-vacio">El carrito está vacío</div>';
+        total.textContent = '0.00€';
+        return;
+    }
+
+    contenedor.innerHTML = '';
+    carrito.items.forEach(item => {
+        contenedor.innerHTML += `
+            <div class="carrito-item">
+                <img src="img/imgProductos/${item.producto.imagen}" alt="${item.producto.nombre}">
+                <div class="carrito-item-info">
+                    <p class="carrito-item-nombre">${item.producto.nombre}</p>
+                    <p class="carrito-item-precio">${item.cantidad}x ${item.producto.precio.toFixed(2)}€</p>
+                </div>
+            </div>
+        `;
+    });
+    
+    total.textContent = carrito.obtenerTotal().toFixed(2) + '€';
 }

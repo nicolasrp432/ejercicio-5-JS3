@@ -196,8 +196,6 @@ export function filterProducts(busqueda= "") {
     if (productos.length === 0) {
         console.log("El array productos está vacío.");
         return;
-    } else {
-        console.log("El array productos tiene " + productos.length + " elementos.");
     }
     const filteredProducts = productos.filter(product => {
         // Filtro por término de búsqueda
